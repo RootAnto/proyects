@@ -1,0 +1,52 @@
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../../img/imgCartas/f3.jpg"); /* Ruta correcta del fondo */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.9; /* Opacidad al 50% */
+    z-index: -1; /* Sitúa el fondo detrás del contenido */
+}
+
+        .card-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        .modal-img {
+            max-height: 1000px; /* modifica el tamaño de la foto de la carta en el modal */
+            width: auto;
+        }
+        .modal-body {
+            background-color: #f8f9fa;
+        }
+        .modal-content {
+            overflow: hidden;
+        }
+        .modal-header, .modal-footer {
+            border-bottom: none;
+            border-top: none;
+        }
+        .detail-label {
+            font-weight: bold;
+        }
+        .detail-section {
+            margin-bottom: 10px;
+        }
+        .detail-title {
+            color: #007bff;
+            font-size: 25px;
+        }
+        .detail-info {
+            font-size: 15px;
+        }
+        .detail-attribute {
+            margin-right: 5px;
+            font-weight: bold;
+        }

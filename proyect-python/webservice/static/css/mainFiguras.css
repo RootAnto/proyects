@@ -1,0 +1,106 @@
+body {
+    font-family: "Arial", sans-serif; /* Cambiado a Arial */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6; /* Ajustado el line-height para una mejor legibilidad */
+    background-color: #f2f2f2; /* Cambiado el color de fondo */
+    color: #333; /* Cambiado el color del texto */
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #666; /* Cambiado el color del scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+
+.heading-page {
+    text-transform: uppercase;
+    font-size: 36px; /* Reducido el tamaño del texto */
+    font-weight: bold; /* Cambiado a bold */
+    letter-spacing: 2px; /* Reducido el espaciado entre letras */
+    color: #333; /* Cambiado el color del texto */
+}
+
+a {
+    color: #007bff; /* Cambiado el color del enlace */
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #0056b3; /* Cambiado el color del enlace al hacer hover */
+    text-decoration: underline; /* Subrayado al hacer hover */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333; /* Cambiado el color del título */
+    font-weight: bold; /* Cambiado a bold */
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Cambiado el color de selección */
+::selection {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Cambiado el estilo del botón */
+.btn-primary {
+    background-color: #007bff;
+    border: 0;
+    font-family: "Arial", sans-serif; /* Cambiado a Arial */
+    font-weight: bold; /* Cambiado a bold */
+    height: 40px; /* Reducida la altura del botón */
+    line-height: 40px; /* Alineado verticalmente el texto */
+    padding: 0 20px; /* Aumentado el padding */
+    text-transform: uppercase;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:active:focus {
+    background-color: #0056b3; /* Cambiado el color del botón al hacer hover */
+}
+
+/* Eliminados los estilos de borde */
+.btn-border {
+    border: none;
+}
+
+/* Cambiado el estilo del scroll */
+.nicescroll-cursors {
+    background: #007bff;
+}
+
+/* Cambiado el tamaño de los íconos */
+.hex-content .icon {
+    font-size: 24px; /* Reducido el tamaño de los íconos */
+}
+
+/* Cambiado el tamaño del título */
+.hex-content .title {
+    font-size: 12px; /* Reducido el tamaño del título */
+    letter-spacing: 1px; /* Aumentado el espaciado entre letras */
+}
+
+/* Cambiado el color de fondo de los hexágonos */
+.hexagon-item .hex-item {
+    background-color: #007bff; /* Cambiado el color de fondo del hexágono */
+}
+
+/* Cambiado el color del texto en hover */
+.hexagon-item:hover .title {
+    color: #007bff; /* Cambiado el color del texto al hacer hover */
+}

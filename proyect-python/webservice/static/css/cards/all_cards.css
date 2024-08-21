@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Azul claro */
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50; /* Color de fondo verde oscuro */
+    color: white;
+}
+
+tr:hover {
+    background-color: #f2f2f2; /* Color de fondo gris claro al pasar el ratón sobre la fila */
+}
+
+.btn-primary {
+    background-color: #008CBA; /* Azul */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #005f6b; /* Azul más oscuro al pasar el ratón sobre el botón */
+}

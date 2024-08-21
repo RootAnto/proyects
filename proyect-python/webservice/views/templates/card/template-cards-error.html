@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('resources', filename='css/cards/error_cards.css') }}">
+</head>
+<body>
+    <!-- Link to external resource -->
+    <a href="https://codepen.io/uiswarup/full/vYPxywO" target="_blank">
+
+        <!-- Top header -->
+        <header class="top-header"></header>
+
+        <!-- Dust particles -->
+        <div>
+            <div class="starsec"></div>
+            <div class="starthird"></div>
+            <div class="starfourth"></div>
+            <div class="starfifth"></div>
+        </div>
+        <!-- Dust particles end -->
+
+        <!-- Lamp animation -->
+        <div class="lamp__wrap">
+            <div class="lamp">
+                <div class="cable"></div>
+                <div class="cover"></div>
+                <div class="in-cover">
+                    <div class="bulb"></div>
+                </div>
+                <div class="light"></div>
+            </div>
+        </div>
+        <!-- End Lamp animation -->
+
+        <!-- Error Section -->
+        <section class="error">
+            <!-- Content -->
+            <div class="error__content">
+                <div class="error__message message">
+                    <h1 class="message__title">No Cards in the Database</h1>
+                    <p class="message__text">Before you can work with the cards, you need to add at least one. Please go to the "Add Card" section and add a card first.</p>
+                </div>
+                <div class="error__nav e-nav">
+                    <a href='/TemplateCartas' target="_blank" class="e-nav__link">Go to Add Card</a>
+                </div>
+            </div>
+            <!-- End Content -->
+        </section>
+
+    </a>
+</body>
+</html>

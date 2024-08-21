@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figure Search Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards/general_cards.css') }}">
+</head>
+
+<body>
+    <div class="bloque1">
+        <div class="bloqueA">
+            <!-- Table container -->
+            <div class="container2 scroll-table">
+                <!-- Results table -->
+                <h1>Remove Figures</h1>
+                <table>
+                    <!-- Table headers -->
+                    <thead>
+                        <tr>
+                            <!-- Search form -->
+                            <th colspan="5">
+                                <form class="form-wrapper cf" method="POST" action="/figure/search/delete">
+                                    <!-- Text input field for search -->
+                                    <label>
+                                        <input type="text" name="value" placeholder="Search for your figure here..." required>
+                                    </label>
+                                    <!-- Search button -->
+                                    <button type="submit">Search</button>
+                                </form>
+                            </th>
+                        </tr>
+                        <!-- Column headers -->
+                        <tr>
+                            <th>Name</th>
+                            <th>Series</th>
+                            <th>Price</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for figure in figures %}
+                        <tr>
+                            <td>{{ figure.name }}</td>
+                            <td>{{ figure.series }}</td>
+                            <td>{{ figure.price }}</td>
+                            <td>{{ figure.year }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="4">No figures found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- End of table container -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Are you sure you want to delete this figure?</p>
+            <button id="confirmDelete">Delete</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for dynamic table interaction and modal handling -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all table rows
+        const tableRows = document.querySelectorAll('tbody tr');
+
+        // Add click event listener to each row
+        tableRows.forEach(function(row) {
+            row.addEventListener('click', function() {
+                // Show the modal when a row is clicked
+                document.getElementById('myModal').style.display = 'block';
+
+                // Get the series of the figure from the selected row
+                const series = row.cells[1].textContent; // Adjust the index based on the series position in the row
+
+                // Add the series as a data attribute to the delete button
+                document.getElementById('confirmDelete').setAttribute('data-series', series);
+            });
+        });
+
+        // Click event handler for the delete confirmation button
+        document.getElementById('confirmDelete').addEventListener('click', function() {
+            // Get the series of the figure from the button's data attribute
+            const seriesToDelete = this.getAttribute('data-series');
+
+            // Perform a POST request to the delete URL with the figure's series
+            fetch("/figure/delete/" + seriesToDelete, {
+                method: 'POST'
+            })
+            .then(response => {
+                // Redirect to the main page or another confirmation page after deletion
+                window.location.href = "/index-figures"; // Adjust the redirect URL as necessary
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+        // Click event handler to close the modal
+        document.querySelector('.close').addEventListener('click', function() {
+            document.getElementById('myModal').style.display = 'none';
+        });
+    });
+    </script>
+</body>
+</html>

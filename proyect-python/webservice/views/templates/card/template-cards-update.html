@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Card Search Form</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/cards/general_cards.css') }}">
+    </head>
+    <body>
+        <div class="bloque1">
+            <div class="bloqueA">
+                <!-- Table container -->
+                <div class="container2 scroll-table">
+                    <!-- Results table -->
+                    <h1>Update Card</h1>
+                    <table>
+                        <!-- Table headers -->
+                        <thead>
+                            <tr>
+                                <!-- Search form -->
+                                <th colspan="5">
+                                    <form class="form-wrapper cf" method="POST" action="/update/search">
+                                        <input type="text" name="value" placeholder="Search your card here..." required>
+                                        <button type="submit">Search</button>
+                                    </form>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Name</th>
+                                <th>Game</th>
+                                <th>Collection</th>
+                                <th>Number</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for card in cards %}
+                            <tr>
+                                <td>{{ card.name }}</td>
+                                <td>{{ card.game }}</td>
+                                <td>{{ card.collection }}</td>
+                                <td>{{ card.number }}</td>
+                                <td>{{ card.price }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Button to return to the main page -->
+            <a href="/index-card" class="btn btn-primary">Back to Menu</a>
+        </div>
+
+       <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="modifyForm" method="POST" action="/cards/modify-query">
+                    <p>Modify Card</p>
+                    <label for="name">Name:</label>
+                    <input type="text" id="new_name" name="new_name" required><br>
+                    <label for="game">Game:</label>
+                    <input type="text" id="new_game" name="new_game" required><br>
+                    <label for="collection">Collection:</label>
+                    <input type="text" id="new_collection" name="new_collection" required><br>
+                    <label for="number">Number:</label>
+                    <input type="number" id="new_number" name="new_number" required><br>
+                    <label for="price">Price:</label>
+                    <input type="number" id="new_price" name="new_price" required><br>
+                    <input type="hidden" id="current_name" name="current_name" value=""><br>
+                    <button type="submit">Modify</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- JavaScript for table dynamic growth and modal interaction -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            var tableRows = document.querySelectorAll('tbody tr');
+
+            tableRows.forEach(function(row) {
+                row.addEventListener('click', function() {
+                    var modal = document.getElementById('myModal');
+                    var closeBtn = document.querySelector('.close');
+
+                    // Display the modal
+                    modal.style.display = 'block';
+
+                    // Populate modal fields
+                    var cardName = row.cells[0].textContent.trim();
+                    var game = row.cells[1].textContent.trim();
+                    var collection = row.cells[2].textContent.trim();
+                    var number = row.cells[3].textContent.trim();
+                    var price = row.cells[4].textContent.trim();
+
+                    console.log(`Card Data: ${cardName}, ${game}, ${collection}, ${number}, ${price}`);
+
+                    document.getElementById('current_name').value = cardName;
+                    document.getElementById('new_name').value = cardName;
+                    document.getElementById('new_game').value = game;
+                    document.getElementById('new_collection').value = collection;
+                    document.getElementById('new_number').value = number;
+                    document.getElementById('new_price').value = price;
+
+                    // Close modal when 'x' is clicked
+                    closeBtn.onclick = function() {
+                        modal.style.display = 'none';
+                    }
+
+                    // Close modal if clicked outside of modal content
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        </script>
+    </body>
+</html>

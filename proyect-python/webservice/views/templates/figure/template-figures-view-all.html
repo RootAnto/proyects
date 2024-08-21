@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario buscar figuras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Cartas/MostrarCartas.css') }}">
+        <style>
+        /* Estilo para el botón */
+        .btn-primary {
+            background-color: #229954;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #1c7e47;
+        }
+
+        /* Estilo para el encabezado */
+        h1 {
+            text-align: center;
+        }
+
+        /* Estilo para el contenedor del botón */
+        .button-container {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <a href="/TemplateFiguras" class="btn btn-primary">Volver al Menú</a>
+    </div>
+    <div class="bloque1">
+        <div class="bloqueA">
+            <!-- Contenedor de la tabla -->
+            <div class="container2 scroll-table">
+                <!-- Tabla de resultados -->
+                <h1>Mostrar Figuras</h1>
+                <table>
+                    <!-- Encabezados de la tabla -->
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Serie</th>
+                            <th>Precio</th>
+                            <th>Año</th>
+                        </tr>
+                    </thead>
+                    <!-- Cuerpo de la tabla (se llenará dinámicamente con los resultados de la búsqueda) -->
+                    <tbody>
+                        <!-- Aquí se llenarán dinámicamente las figuras -->
+                        {% for figura in resultado %}
+                        <tr>
+                            <td>{{ figura.nombre }}</td>
+                            <td>{{ figura.serie }}</td>
+                            <td>{{ figura.precio }}</td>
+                            <td>{{ figura.anio }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- Fin del contenedor de la tabla -->
+        </div>
+    </div>
+    <!-- Botón para volver a la pagina principal -->
+    <a href="/TemplateFiguras" class="btn btn-primary">Volver al Menú</a>
+</body>
+</html>

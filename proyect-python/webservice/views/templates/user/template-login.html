@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login/login.css') }}">
+</head>
+<body>
+
+   <!-- Code for the black login card -->
+<section class="vh-100 gradient-custom">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+              <p class="text-white-50 mb-5">Please enter your name and password!</p>
+
+              <!-- Login Form -->
+              <form class="mb-4" method="POST" action="/login">
+                <div class="form-group">
+                  <input type="email" id="email" class="form-control form-control-lg" placeholder="Email" name="email" required value="{{ loginEmail if loginEmail is not none else '' }}">
+                </div>
+                <div class="form-group">
+                  <input type="password" id="pass" class="form-control form-control-lg" placeholder="Password" name="password" required value="{{ loginPassword if loginPassword is not none else '' }}">
+                </div>
+                <!-- Show login error message if it exists -->
+                {% if login_error %}
+                  <div class="alert alert-danger" role="alert">
+                    {{ login_error }}
+                  </div>
+                {% endif %}
+                <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+              </form>
+
+              <div class="mt-4 pt-1">
+                <a href="#!" class="text-white pr-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#!" class="text-white px-2"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#!" class="text-white pl-2"><i class="fab fa-google fa-lg"></i></a>
+              </div>
+
+              <!-- Social media icons -->
+              <div class="social-icons">
+                <a href="#!" class="social-icon" id="facebook-icon">
+                  <img src="{{ url_for('static', filename='/img/f1.png') }}" alt="Facebook" />
+                </a>
+                <a href="#!" class="social-icon" id="twitter-icon">
+                  <img src="{{ url_for('static', filename='img/t1.png') }}" alt="Twitter" />
+                </a>
+                <a href="#!" class="social-icon" id="google-icon">
+                  <img src="{{ url_for('static', filename='img/g1.png') }}" alt="Google" />
+                </a>
+              </div>
+
+              <p class="mb-0 mt-4">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Register</a></p>
+            </div>
+
+            <!-- Registration card, initially hidden -->
+          <div class="card registration-card bg-dark text-white" style="border-radius: 1rem; display: none;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
+                <p class="text-white-50 mb-5">Please fill in your details!</p>
+
+                <!-- Registration Form -->
+                <form class="mb-4" method="POST" action="/register">
+                  <div class="form-group">
+                    <input type="email" class="form-control form-control-lg" placeholder="Email" name="email" required value="{{ registerEmail if registerEmail is not none else '' }}">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control form-control-lg" placeholder="Password" name="password" required value="{{ registerPassword if registerPassword is not none else '' }}">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control form-control-lg" placeholder="Repeat Password" name="repeatedPassword" required value="{{ registerRepeatedPassword if registerRepeatedPassword is not none else '' }}">
+                  </div>
+                  <!-- Show registration error message if it exists -->
+                    {% if register_error %}
+                      <div class="alert alert-danger" role="alert">
+                        {{ register_error }}
+                      </div>
+                    {% endif %}
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Register</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Optional: Include Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Load JavaScript -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* Basic reset for some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  background-image: url('../../img/fondoLogin.png'); /* Ensure the image path is correct */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Main container styles */
+.vh-100 {
+  height: 100vh; /* Full viewport height */
+}
+
+/* Card styles */
+.card,
+.registration-card {
+  background-color: rgba(0, 0, 0, 0.8); /* Card background color with some transparency */
+  border-radius: 1rem; /* Rounded card corners */
+  color: white; /* Text color for elements inside the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for the card */
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Slower transition */
+  width: 100%; /* Set cards to occupy the full width */
+}
+
+/* Styles for the form and its elements */
+.form-control {
+  background-color: #333; /* Input background color */
+  border: none; /* Remove the border */
+  border-radius: 0.3rem; /* Rounded input borders */
+  color: white; /* Text color for inputs */
+  margin-bottom: 1rem; /* Space below inputs */
+}
+
+.form-label {
+  margin-bottom: 0.5rem; /* Space below labels */
+}
+
+.btn {
+  border: 1px solid white; /* Button border */
+}
+
+/* Styles for password recovery and registration links */
+a.text-white-50 {
+  color: #bbb; /* Lighter color for these links */
+}
+
+/* Social media icons */
+.fab {
+  color: white; /* Icon color */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .card,
+  .registration-card {
+    margin: 20px; /* More margin on smaller devices */
+    width: auto; /* Adjust to appropriate size on mobile devices */
+  }
+}
+
+
+/* -------------------------------    Social Media Icons CSS  ----------------------------------- */
+
+/* Styles for social icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between icons */
+}
+
+.social-icon img {
+  width: 30px; /* Icon width, adjust as needed */
+  height: auto; /* Auto height to maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-icon:hover img {
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+
+/* -------------------------------    Registration Card CSS  ----------------------------------- */
+
+/* Style for the registration card */
+.registration-card {
+  display: block; /* Always show it, but hide with opacity */
+  opacity: 0; /* Initially transparent */
+  position: absolute; /* Absolute position to overlay other content */
+  top: 0; /* Aligned with the top of the container */
+  right: -100%; /* Initially off-screen to the right */
+  height: 100%; /* Full height to align with the login card */
+}

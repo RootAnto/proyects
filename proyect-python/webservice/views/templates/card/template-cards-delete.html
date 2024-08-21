@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search Card Form</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/cards/general_cards.css') }}">
+    </head>
+    <body>
+        <div class="bloque1">
+            <div class="bloqueA">
+                <!-- Table container -->
+                <div class="container2 scroll-table"> <!-- Added 'scroll-table' class for scroll effect -->
+                    <!-- Results table -->
+                    <h1>Delete Card</h1>
+                    <table>
+                        <!-- Table headers -->
+                        <thead>
+                            <tr>
+                                <!-- Search form -->
+                                <th colspan="5">
+                                    <form class="form-wrapper cf" method="POST" action="/delete-card/search">
+                                        <!-- Text input field for search -->
+                                        <input type="text" name="value" placeholder="Search your card here..." required>
+                                        <!-- Search button -->
+                                        <button type="submit">Search</button>
+                                    </form>
+                                </th>
+                            </tr>
+                            <!-- Column headers -->
+                            <tr>
+                                <th>Name</th>
+                                <th>Game</th>
+                                <th>Collection</th>
+                                <th>Number</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                            {% for card in cards %}
+                            <tr>
+                                <td>{{ card.name }}</td>
+                                <td>{{ card.game }}</td>
+                                <td>{{ card.collection }}</td>
+                                <td>{{ card.number }}</td>
+                                <td>{{ card.price }}</td>
+                            </tr>
+                            {% endfor %}
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- End of table container -->
+            <!-- Button back to menu -->
+            <a href="/index-card" class="btn btn-primary">Back to Menu</a>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Are you sure you want to delete this card?</p>
+                <button id="confirmDelete">Delete</button>
+            </div>
+        </div>
+
+        <!-- JavaScript for dynamic table growth and modal interaction -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Select all table rows
+                var tableRows = document.querySelectorAll('tbody tr');
+
+                // Add click event listener to each row
+                tableRows.forEach(function(row) {
+                    row.addEventListener('click', function() {
+                        // Display the modal when a row is clicked
+                        document.getElementById('myModal').style.display = 'block';
+
+                        // Close the modal when the 'x' (close) is clicked
+                        document.querySelector('.close').addEventListener('click', function() {
+                            document.getElementById('myModal').style.display = 'none';
+                        });
+
+                        // Capture the card name from the selected row
+                        var cardName = row.cells[0].textContent.trim(); // Assuming the name is in the first cell
+
+                        // Add click event listener to the delete button in the modal
+                        document.getElementById('confirmDelete').addEventListener('click', function() {
+                            // Send a POST request to the server to delete the card
+                            fetch('/cards/delete/' + cardName, {  // URL changed to include the card name
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                }
+                            })
+                            .then(response => {
+                                // Check if the request was successful
+                                if (response.ok) {
+                                    // Remove the row from the table
+                                    row.remove();
+                                    // Hide the modal
+                                    document.getElementById('myModal').style.display = 'none';
+                                } else {
+                                    console.error('Error deleting the card');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error deleting the card:', error);
+                            });
+                        });
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

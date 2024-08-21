@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon TCG Gallery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards/search_cards.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <input type="text" id="searchInput" class="form-control" placeholder="Enter the name of a card">
+            </div>
+            <div class="col-auto">
+                <button id="searchButton" class="btn btn-primary">Search</button>
+                <a href="/mainpage" class="btn btn-secondary">Main Menu</a>
+            </div>
+        </div>
+        <div class="row mt-3" id="cardsContainer">
+            <!-- Cards will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Modal for Card Details -->
+    <div class="modal fade" id="cardDetailsModal" tabindex="-1" aria-labelledby="cardDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cardDetailsModalLabel">Card Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Card Details Will Load Here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const fetchCards = async (query = '') => {
+                const response = await fetch(`https://api.pokemontcg.io/v2/cards?q=name:${query}*`, {
+                    headers: {
+                        'X-Api-Key': '6409afa6-d0fa-4bf7-b873-4350df64cfef'
+                    }
+                });
+                const data = await response.json();
+                return data.data;
+            };
+
+            const displayCards = (cards) => {
+                const container = $('#cardsContainer');
+                container.empty();
+
+                cards.forEach(card => {
+                    const cardElement = $(`
+                        <div class="col-md-3 mb-4">
+                            <div class="card" data-card-id="${card.id}" style="cursor:pointer;">
+                                <img src="${card.images.small}" class="card-img-top card-image" alt="${card.name}">
+                            </div>
+                        </div>
+                    `);
+                    cardElement.click(() => showCardDetails(card));
+                    container.append(cardElement);
+                });
+            };
+
+            const showCardDetails = (card) => {
+                const modalBody = $('#modalBody');
+                modalBody.empty();
+
+                const detailsContent = $(`
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="${card.images.large}" class="img-fluid modal-img" alt="${card.name}">
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="detail-title">${card.name}</h3>
+                                <div class="detail-section">
+                                    <span class="detail-label">Supertype:</span>
+                                    <span class="detail-info">${card.supertype}</span>
+                                </div>
+                                <div class="detail-section">
+                                    <span class="detail-label">Subtypes:</span>
+                                    <span class="detail-info">${card.subtypes.join(', ')}</span>
+                                </div>
+                                <div class="detail-section">
+                                    <span class="detail-label">HP:</span>
+                                    <span class="detail-info">${card.hp || 'N/A'}</span>
+                                </div>
+                                <div class="detail-section">
+                                    <span class="detail-label">Types:</span>
+                                    <span class="detail-info">${card.types ? card.types.join(', ') : 'N/A'}</span>
+                                </div>
+                                ${card.attacks.map(attack => `
+                                    <div class="detail-section">
+                                        <h5>${attack.name}</h5>
+                                        <span class="detail-attribute">Cost:</span>
+                                        <span class="detail-info">${attack.cost.join(', ')}</span><br>
+                                        <span class="detail-attribute">Damage:</span>
+                                        <span class="detail-info">${attack.damage}</span><br>
+                                        <span class="detail-attribute">Text:</span>
+                                        <span class="detail-info">${attack.text}</span>
+                                    </div>
+                                `).join('')}
+                                <div class="detail-section">
+                                    <span class="detail-label">Rarity:</span>
+                                    <span class="detail-info">${card.rarity}</span>
+                                </div>
+                                <div class="detail-section">
+                                    <span class="detail-label">Artist:</span>
+                                    <span class="detail-info">${card.artist}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+
+                modalBody.append(detailsContent);
+                $('#cardDetailsModal').modal('show');
+            };
+
+            $('#searchButton').click(function() {
+                const query = $('#searchInput').val();
+                fetchCards(query).then(displayCards);
+            });
+        });
+    </script>
+</body>
+</html>

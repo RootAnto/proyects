@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index/product_cards.css') }}">
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header-blog bg-animation">
+        <div class="container">
+          <div class="row header-row">
+            <!-- Main title -->
+            <div class="col align-self-center main-title text-center">
+              <h1 class="white"><b>Welcome</b><span class="thin"> to Game World</span></h1>
+              <!-- Buttons -->
+              <a href=""></a>
+              <a class="white-link" href="www.google.com" target="_blank">Your trusted store<i class="fas fa-chevron-right"></i></a>
+            </div>
+            <!-- Main title end -->
+          </div>
+        </div>
+      </header>
+    </div>
+
+     <!--Container with buttons-->
+    <div class="container-buttons mt-5" id="button-container">
+      <!-- First buton -->
+      <section>
+        <div class="container">
+          <a href='/index-card' >
+            <div class="background-img">
+              <div class="box">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <div class="content">
+                  <h2>Trading Cards</h2>
+                  <p><a>Get to know the cards from the TCG world that we offer you.</a></p>
+                  <img src="{{ url_for('static', filename='/img/imgMainPage/pokemon.gif') }}" alt="Pokemon" width="120" height="120">
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Second button with specific class -->
+      <section>
+        <div class="container">
+          <a href='/index-figures'  class="button-coleccionables">
+            <div class="background-img">
+              <div class="box">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <div class="content">
+                  <h2>Collectible Figures</h2>
+                  <p><a>Get to know the collectible figures we offer.</a></p>
+                  <img src="{{ url_for('static', filename='/img/imgMainPage/Imperialdramon.gif') }}" alt="Pokemon" width="120" height="120">
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+  </body>
+</html>
