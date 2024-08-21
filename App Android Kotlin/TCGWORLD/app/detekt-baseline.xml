@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>ComplexCondition:CardDetailScreen.kt$uiState.rules.isNotEmpty() || uiState.retreatCost.isNotEmpty() || uiState.resistances.isNotEmpty() || uiState.weaknesses.isNotEmpty()</ID>
+    <ID>CyclomaticComplexMethod:CardDetailScreen.kt$@Composable fun CardDetailScreen( onClickBack: () -> Unit, viewModel: CardDetailViewModel = hiltViewModel() )</ID>
+    <ID>InstanceOfCheckForException:GoogleAuthUiClient.kt$GoogleAuthUiClient$e is CancellationException</ID>
+    <ID>MatchingDeclarationName:CreateListCardScreen.kt$PokemonDetailData</ID>
+    <ID>MaxLineLength:MainActivity.kt$MainActivity$*</ID>
+    <ID>NoWildcardImports:SetDetailScreen.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>NoWildcardImports:SetDetailScreen.kt$import androidx.compose.material3.*</ID>
+    <ID>NoWildcardImports:SetListScreen.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>TooGenericExceptionCaught:GoogleAuthUiClient.kt$GoogleAuthUiClient$e: Exception</ID>
+    <ID>TooManyFunctions:CardDetailScreen.kt$com.example.pokectcollection.ui.carddetail.view.CardDetailScreen.kt</ID>
+    <ID>UndocumentedPublicClass:Achievement.kt$Achievement</ID>
+    <ID>UndocumentedPublicClass:AchievementRepository.kt$AchievementRepository</ID>
+    <ID>UndocumentedPublicClass:AuthRepository.kt$AuthRepository</ID>
+    <ID>UndocumentedPublicClass:AuthResponse.kt$AuthResponse</ID>
+    <ID>UndocumentedPublicClass:Card.kt$Card</ID>
+    <ID>UndocumentedPublicClass:CardImages.kt$CardImages</ID>
+    <ID>UndocumentedPublicClass:CardRepository.kt$CardRepository</ID>
+    <ID>UndocumentedPublicClass:CreateCustomCardListUseCase.kt$CreateCustomCardListUseCase</ID>
+    <ID>UndocumentedPublicClass:CreateUserDocUseCase.kt$CreateUserDocUseCase</ID>
+    <ID>UndocumentedPublicClass:GetAchievementListUseCase.kt$GetAchievementListUseCase</ID>
+    <ID>UndocumentedPublicClass:GetCardListUseCase.kt$GetCardListUseCase</ID>
+    <ID>UndocumentedPublicClass:GetCardUseCase.kt$GetCardUseCase</ID>
+    <ID>UndocumentedPublicClass:GetCurrentUserUseCase.kt$GetCurrentUserUseCase</ID>
+    <ID>UndocumentedPublicClass:GetCustomCardListsUseCase.kt$GetCustomCardListsUseCase</ID>
+    <ID>UndocumentedPublicClass:GetSetsUseCase.kt$GetSetsUseCase</ID>
+    <ID>UndocumentedPublicClass:GetUserOwnedCardsUseCase.kt$GetUserOwnedCardsUseCase</ID>
+    <ID>UndocumentedPublicClass:GetUserProfilePictureUseCase.kt$GetUserProfilePictureUseCase</ID>
+    <ID>UndocumentedPublicClass:LoadFirebaseResourcesUseCase.kt$LoadFirebaseResourcesUseCase</ID>
+    <ID>UndocumentedPublicClass:LoginWithEmailAndPasswordUseCase.kt$LoginWithEmailAndPasswordUseCase</ID>
+    <ID>UndocumentedPublicClass:PocketCollectionApp.kt$PocketCollectionApp : Application</ID>
+    <ID>UndocumentedPublicClass:Set.kt$Set</ID>
+    <ID>UndocumentedPublicClass:SetImages.kt$SetImages</ID>
+    <ID>UndocumentedPublicClass:SetLegalities.kt$SetLegalities</ID>
+    <ID>UndocumentedPublicClass:SetRepository.kt$SetRepository</ID>
+    <ID>UndocumentedPublicClass:SignOutUseCase.kt$SignOutUseCase</ID>
+    <ID>UndocumentedPublicClass:SignUpWithEmailAndPasswordUseCase.kt$SignUpWithEmailAndPasswordUseCase</ID>
+    <ID>UndocumentedPublicClass:UpdateCardOwnershipUseCase.kt$UpdateCardOwnershipUseCase</ID>
+    <ID>UndocumentedPublicClass:User.kt$User</ID>
+    <ID>UndocumentedPublicFunction:AchievementRepository.kt$AchievementRepository$fun getAchievementList(): Flow&lt;List&lt;Achievement>></ID>
+    <ID>UndocumentedPublicFunction:AchievementScreen.kt$@Composable fun LogroLabel( achievementImage: Int, achievementName: String, viewModel: AchievementsViewModel = hiltViewModel() )</ID>
+    <ID>UndocumentedPublicFunction:AchievementScreen.kt$@Composable fun LogroList( viewModel: AchievementsViewModel = hiltViewModel() )</ID>
+    <ID>UndocumentedPublicFunction:AchievementScreen.kt$@Preview(showBackground = true) @Composable fun LogroLabelPreview()</ID>
+    <ID>UndocumentedPublicFunction:AuthRepository.kt$AuthRepository$fun getCurrentUserId(): String?</ID>
+    <ID>UndocumentedPublicFunction:AuthRepository.kt$AuthRepository$fun signInWithEmailAndPassword(email: String, password: String): Flow&lt;AuthResponse></ID>
+    <ID>UndocumentedPublicFunction:AuthRepository.kt$AuthRepository$fun signOut()</ID>
+    <ID>UndocumentedPublicFunction:AuthRepository.kt$AuthRepository$fun signUpWithEmailAndPassword(user: User, password: String): Flow&lt;AuthResponse></ID>
+    <ID>UndocumentedPublicFunction:AuthResponse.kt$AuthResponse.Companion$fun getEmptyResponse(): AuthResponse</ID>
+    <ID>UndocumentedPublicFunction:Card.kt$Card.Companion$fun getEmptyCard()</ID>
+    <ID>UndocumentedPublicFunction:CardAbilities.kt$CardAbilities.Companion$fun getEmptyCardAbilities()</ID>
+    <ID>UndocumentedPublicFunction:CardAttack.kt$CardAttack.Companion$fun getEmptyCardAttack()</ID>
+    <ID>UndocumentedPublicFunction:CardImages.kt$CardImages.Companion$fun getEmptyCardImages()</ID>
+    <ID>UndocumentedPublicFunction:CardLegalities.kt$CardLegalities.Companion$fun getEmptyCardLegalities()</ID>
+    <ID>UndocumentedPublicFunction:CardRepository.kt$CardRepository$fun getCardById(setId: String, cardId: String): Flow&lt;Card?></ID>
+    <ID>UndocumentedPublicFunction:CardRepository.kt$CardRepository$fun getCustomCardById(setId: String, cardId: String): Card</ID>
+    <ID>UndocumentedPublicFunction:CardRepository.kt$CardRepository$fun updateLocalCardOwnership(setId: String, cardId: String): Flow&lt;List&lt;Card>></ID>
+    <ID>UndocumentedPublicFunction:CardRepository.kt$CardRepository$suspend fun getCardList(setId: String): Flow&lt;List&lt;Card>></ID>
+    <ID>UndocumentedPublicFunction:CardRepository.kt$CardRepository$suspend fun loadFirebaseSetCards( set: Set, ownedCardList: List&lt;String>, areOwnedCardsIncluded: Boolean )</ID>
+    <ID>UndocumentedPublicFunction:CardRepository.kt$CardRepository$suspend fun updateLoadedOwnedCards(userId: String): List&lt;String></ID>
+    <ID>UndocumentedPublicFunction:CardResistance.kt$CardResistance.Companion$fun getEmpyCardReistance()</ID>
+    <ID>UndocumentedPublicFunction:CardSet.kt$CardSet.Companion$fun getEmpySetCardSet()</ID>
+    <ID>UndocumentedPublicFunction:CardSet.kt$fun Set.toCardSet()</ID>
+    <ID>UndocumentedPublicFunction:CardUiState.kt$CardUiState.Companion$fun getEmptyState()</ID>
+    <ID>UndocumentedPublicFunction:CardWeakness.kt$CardWeakness.Companion$fun getEmpyCardWeakness()</ID>
+    <ID>UndocumentedPublicFunction:CreateCustomCardListUseCase.kt$CreateCustomCardListUseCase$operator fun invoke(cardList: List&lt;Card>)</ID>
+    <ID>UndocumentedPublicFunction:CreateUserDocUseCase.kt$CreateUserDocUseCase$operator fun invoke(googleUser: UserData)</ID>
+    <ID>UndocumentedPublicFunction:GetAchievementListUseCase.kt$GetAchievementListUseCase$operator fun invoke(): Flow&lt;List&lt;Achievement>></ID>
+    <ID>UndocumentedPublicFunction:GetCardListUseCase.kt$GetCardListUseCase$suspend operator fun invoke(setId: String): Flow&lt;List&lt;Card>></ID>
+    <ID>UndocumentedPublicFunction:GetCardUseCase.kt$GetCardUseCase$operator fun invoke(id: String): Flow&lt;Card?></ID>
+    <ID>UndocumentedPublicFunction:GetCurrentUserUseCase.kt$GetCurrentUserUseCase$operator fun invoke(): Flow&lt;User?></ID>
+    <ID>UndocumentedPublicFunction:GetCustomCardListsUseCase.kt$GetCustomCardListsUseCase$operator fun invoke(): Flow&lt;List&lt;List&lt;Card>>></ID>
+    <ID>UndocumentedPublicFunction:GetSetsUseCase.kt$GetSetsUseCase$suspend operator fun invoke(): Flow&lt;List&lt;Set>></ID>
+    <ID>UndocumentedPublicFunction:GetUserOwnedCardsUseCase.kt$GetUserOwnedCardsUseCase$operator fun invoke(): Flow&lt;List&lt;String>></ID>
+    <ID>UndocumentedPublicFunction:GetUserProfilePictureUseCase.kt$GetUserProfilePictureUseCase$operator fun invoke(): Flow&lt;String?></ID>
+    <ID>UndocumentedPublicFunction:LoadFirebaseResourcesUseCase.kt$LoadFirebaseResourcesUseCase$suspend operator fun invoke()</ID>
+    <ID>UndocumentedPublicFunction:LoginWithEmailAndPasswordUseCase.kt$LoginWithEmailAndPasswordUseCase$operator fun invoke(email: String, password: String): Flow&lt;AuthResponse></ID>
+    <ID>UndocumentedPublicFunction:SetImages.kt$SetImages.Companion$fun getEmptySetImages()</ID>
+    <ID>UndocumentedPublicFunction:SetLegalities.kt$SetLegalities.Companion$fun getEmptySetLegalities()</ID>
+    <ID>UndocumentedPublicFunction:SetRepository.kt$SetRepository$fun getSetById(id: String): Set</ID>
+    <ID>UndocumentedPublicFunction:SetRepository.kt$SetRepository$fun getSets(): List&lt;Set></ID>
+    <ID>UndocumentedPublicFunction:SetRepository.kt$SetRepository$suspend fun getFirebaseSets(): List&lt;Set></ID>
+    <ID>UndocumentedPublicFunction:SignOutUseCase.kt$SignOutUseCase$operator fun invoke()</ID>
+    <ID>UndocumentedPublicFunction:SignUpWithEmailAndPasswordUseCase.kt$SignUpWithEmailAndPasswordUseCase$operator fun invoke(user: User, password: String)</ID>
+    <ID>UndocumentedPublicFunction:Theme.kt$@Composable fun ComposeGoogleSignInCleanArchitectureTheme( darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit )</ID>
+    <ID>UndocumentedPublicFunction:Theme.kt$@Composable fun PokectCollectionTheme( darkTheme: Boolean = isSystemInDarkTheme(), // Dynamic color is available on Android 12+ dynamicColor: Boolean = true, content: @Composable () -> Unit )</ID>
+    <ID>UndocumentedPublicFunction:UpdateCardOwnershipUseCase.kt$UpdateCardOwnershipUseCase$suspend operator fun invoke(setId: String, cardId: String): Flow&lt;List&lt;Card>></ID>
+    <ID>UndocumentedPublicFunction:UserDetailScreen.kt$@Composable fun ImagePickerItem(@DrawableRes imageRes: Int, onImageSelected: (Int) -> Unit)</ID>
+    <ID>UndocumentedPublicFunction:UserDetailScreen.kt$@Composable fun InfoCard( @DrawableRes icon: Int, title: String, value: String )</ID>
+    <ID>UndocumentedPublicFunction:UserDetailScreen.kt$@Composable fun MedalsCard(medals: List&lt;Int>)</ID>
+    <ID>UndocumentedPublicFunction:UserDetailScreen.kt$@Composable fun UserDetailScreen( viewModel: UserDetailViewModel = hiltViewModel(), onProfileClick: () -> Unit, onSetListClick: () -> Unit, onLogOut: () -> Unit, onCreateListClick: () -> Unit, onClickBack: () -> Unit, onCheckListCardClick: () -> Unit, onClickachievements: () -> Unit, )</ID>
+    <ID>UndocumentedPublicFunction:UserDetailScreen.kt$@Composable fun UserProfileImagePicker( userEmail: String, viewModel: UserDetailViewModel, profilePicture: String, selectedImageResId: Int )</ID>
+    <ID>UndocumentedPublicFunction:UserDetailViewModel.kt$UserDetailViewModel$fun logOut()</ID>
+    <ID>UndocumentedPublicProperty:Achievement.kt$Achievement$val date: String = ""</ID>
+    <ID>UndocumentedPublicProperty:Achievement.kt$Achievement$val description: String = ""</ID>
+    <ID>UndocumentedPublicProperty:Achievement.kt$Achievement$val name: String = ""</ID>
+    <ID>UndocumentedPublicProperty:Achievement.kt$Achievement$val url: String = ""</ID>
+    <ID>UndocumentedPublicProperty:AuthResponse.kt$AuthResponse$val errorMessage: String?</ID>
+    <ID>UndocumentedPublicProperty:AuthResponse.kt$AuthResponse$val isAuthSuccessful: Boolean</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val abilities: CardAbilities</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val artist: String</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val attacks: List&lt;CardAttack></ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val evolvesFrom: String</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val evolvesTo: List&lt;String></ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val flavorText: String</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val hp: String</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val id: String</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val images: CardImages</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val legalities: CardLegalities</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val name: String</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val number: String</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val owned: Boolean</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val rarity: String</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val resistances: List&lt;CardResistance></ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val retreatCost: List&lt;String></ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val rules: List&lt;String></ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val set: CardSet</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val subtypes: List&lt;String></ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val supertype: String</ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val types: List&lt;String></ID>
+    <ID>UndocumentedPublicProperty:Card.kt$Card$val weaknesses: List&lt;CardWeakness></ID>
+    <ID>UndocumentedPublicProperty:CardImages.kt$CardImages$val large: String</ID>
+    <ID>UndocumentedPublicProperty:CardImages.kt$CardImages$val small: String</ID>
+    <ID>UndocumentedPublicProperty:CardUiState.kt$CardUiState$val owned: Boolean</ID>
+    <ID>UndocumentedPublicProperty:Route.kt$Route$val route: String</ID>
+    <ID>UndocumentedPublicProperty:Set.kt$Set$val id: String</ID>
+    <ID>UndocumentedPublicProperty:Set.kt$Set$val images: SetImages</ID>
+    <ID>UndocumentedPublicProperty:Set.kt$Set$val legalities: SetLegalities</ID>
+    <ID>UndocumentedPublicProperty:Set.kt$Set$val name: String</ID>
+    <ID>UndocumentedPublicProperty:Set.kt$Set$val ownedCards: Int</ID>
+    <ID>UndocumentedPublicProperty:Set.kt$Set$val releaseDate: String</ID>
+    <ID>UndocumentedPublicProperty:Set.kt$Set$val series: String</ID>
+    <ID>UndocumentedPublicProperty:Set.kt$Set$val total: Int</ID>
+    <ID>UndocumentedPublicProperty:SetImages.kt$SetImages$val logo: String</ID>
+    <ID>UndocumentedPublicProperty:SetImages.kt$SetImages$val symbol: String</ID>
+    <ID>UndocumentedPublicProperty:SetLegalities.kt$SetLegalities$val expanded: String</ID>
+    <ID>UndocumentedPublicProperty:SetLegalities.kt$SetLegalities$val standard: String</ID>
+    <ID>UndocumentedPublicProperty:SetLegalities.kt$SetLegalities$val unlimited: String</ID>
+    <ID>UndocumentedPublicProperty:TopBarViewModel.kt$TopBarViewModel$// StateFlow to expose the UI state to the UI layer val uiState: StateFlow&lt;TopBarUiState> = _uiState.asStateFlow()</ID>
+    <ID>UndocumentedPublicProperty:User.kt$User$val cardList: List&lt;String> = emptyList()</ID>
+    <ID>UndocumentedPublicProperty:User.kt$User$val customCardLists: List&lt;List&lt;String>> = emptyList()</ID>
+    <ID>UndocumentedPublicProperty:User.kt$User$val email: String = ""</ID>
+    <ID>UndocumentedPublicProperty:User.kt$User$val name: String = ""</ID>
+    <ID>UndocumentedPublicProperty:User.kt$User$val profilePictureUrl: String = ""</ID>
+    <ID>UnusedParameter:UserDetailScreen.kt$onProfileClick: () -> Unit</ID>
+    <ID>WildcardImport:SetDetailScreen.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:SetDetailScreen.kt$import androidx.compose.material3.*</ID>
+    <ID>WildcardImport:SetListScreen.kt$import androidx.compose.foundation.layout.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

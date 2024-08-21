@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    ##antonio string
+    <string name="app_name">PokectCollection</string>
+    <string name="web_client_id">826240098438-tft9hf96c99vjqa0bra4uo8k8hse7j1f.apps.googleusercontent.com</string>
+    <string name="image_user">ユーザー画像</string>
+    <string name="sets">セット: %1$s 完了</string>
+    <string name="Back">戻る</string>
+    <string name="Changes">変更</string>
+    <string name="email">メール: %1$s</string>
+    <string name="cards">カード: %1$s 収集済み</string>
+    ##Sergio Strings
+
+    #String Login
+    <string name="selector_de_vista">ビューセレクター:</string>
+    <string name="user">メール</string>
+    <string name="password">パスワード</string>
+    <string name="password_incorrecta">パスワードが間違っています</string>
+    <string name="iniciar_sesion">ログイン</string>
+    <string name="registro">登録</string>
+    <string name="olvidaste_la_password">"パスワードを忘れました "</string>
+    <string name="inicio_con_red_social_google">Googleでログイン</string>
+    <string name="inicio_con_red_social_facebook">Facebookでログイン</string>
+    <string name="inicio_con_red_social_instagram">Instagramでログイン</string>
+
+    #String CardDetailScreen
+    <string name="background_image">背景画像</string>
+    <string name="flecha_para_retroceder_volver_a_la_lista_de_cartas">カードリストに戻る矢印</string>
+    <string name="habilidades">スキル</string>
+    <string name="ataques">攻撃</string>
+    <string name="no_attack_details_available">攻撃の詳細が利用できません</string>
+    <string name="normas">ルール</string>
+    <string name="weakness">弱点: </string>
+    <string name="no_weakness_details_available">弱点の詳細が利用できません</string>
+    <string name="no_resistance_details_available">N/A</string>
+    <string name="legalidad">合法性</string>
+    <string name="informaci_n_adicional">追加情報</string>
+    <string name="artist">アーティスト:</string>
+    <string name="set_id">セットID:</string>
+    <string name="set_serie">セットシリーズ:</string>
+    <string name="set">セット:</string>
+    <string name="number">番号: </string>
+    <string name="regulation_mark">規制マーク: </string>
+    <string name="icono_que_indica_las_habilidades">スキルを示すアイコン</string>
+    <string name="icono_de_la_rareza">レアリティアイコン</string>
+    <string name="button_image">ボタン画像</string>
+    <string name="standard">スタンダード</string>
+    <string name="expanded">拡張</string>
+    <string name="unlimited">無制限</string>
+    <string name="rarity">レアリティ: %1$s</string>
+
+    #String CardListScreen
+    <string name="numero">番号: %1$s</string>
+    <string name="collection_symbol">コレクションシンボル</string>
+    <string name="tienes">あなたは持っています: %1$s</string>
+    <string name="coleccion">"コレクション: "</string>
+    <string name="icono_clicable">クリック可能なアイコン</string>
+    <string name="modo_de_vista">表示モード:</string>
+    <string name="buscar_carta">カード検索</string>
+    <string name="lista_de_cartas">カードリスト</string>
+    <string name="crear_lista_de_cartas">カードリストを作成</string>
+    <string name="buscar_cartas">カードを検索</string>
+
+    #String RegisterScreen
+    <string name="fondoregistro">登録背景</string>
+    <string name="nombre_publico">公開名</string>
+    <string name="escribe_tu_nombre_publico">公開名を入力してください</string>
+    <string name="email_label">メール</string>
+    <string name="escribe_tu_email">メールを入力してください</string>
+    <string name="contraseña">パスワード</string>
+    <string name="crea_una_contraseña">パスワードを作成</string>
+    <string name="repetir_contraseña">パスワードを再入力</string>
+    <string name="repite_tu_contraseña">パスワードを再入力してください</string>
+    <string name="registrar">登録</string>
+    <string name="volver">戻る</string>
+    <string name="nombre_debe_tener_6_caracteres">名前は少なくとも6文字必要です</string>
+    <string name="formato_de_correo_invalido">無効なメール形式</string>
+    <string name="contraseña_debe_tener_8_caracteres_y_un_numero">パスワードは少なくとも8文字と1つの数字が必要です</string>
+    <string name="contraseñas_no_coinciden">パスワードが一致しません</string>
+
+    #String SetDetailScreen
+    <string name="fecha_de_salida">発売日 %1$s</string>
+    <string name="tiene">"持っています: %1$s/%2$s "</string>
+
+    #String SetListScreen
+    <string name="buscar_set">セットを検索</string>
+    <string name="lista_de_sets">セットリスト</string>
+    <string name="crear_lista">リストを作成</string>
+
+    #String CrearCardList
+    <string name="crear_listas_de_cartas">カードリストを作成</string>
+    <string name="guardar">保存</string>
+    <string name="cerrar">閉じる</string>
+
+    #String SplashScreen
+    <string name="cargando">読み込み中...</string>
+    <string name="lista_creada">リストが作成されました</string>
+    <string name="listas_personalizadas">カスタムリスト</string>
+    <string name="guardar_lista">リストを保存</string>
+    <string name="logro_conseguido">達成</string>
+
+    #Top bar
+    <string name="perfil">プロフィール</string>
+    <string name="ver_listas">リストを見る</string>
+    <string name="cerrar_sesion">ログアウト</string>
+    <string name="fecha_de_ingreso">入会日</string>
+    <string name="sets_completados">完了したセット</string>
+    <string name="carta_conseguida">取得カード</string>
+    <string name="medallas">メダル</string>
+    <string name="cancelar">キャンセル</string>
+    <string name="por_favor_ingrese_nombre_de_la_lista">リスト名を入力してください</string>
+    <string name="nombre_de_la_lista">リスト名</string>
+    <string name="selecciona_foto_de_perfil">プロフィール写真を選択</string>
+    <string name="cambiar_nombre">名前を変更</string>
+    <string name="nombre">名前</string>
+    <string name="imagen_de_logro">達成画像</string>
+    <string name="registra_tu_primera_carta">最初のカードを登録する</string>
+    <string name="crea_tu_primera_lista_de_cartas">最初のカードリストを作成する</string>
+    <string name="completa_tu_primer_set">最初のセットを完了する</string>
+
+    <string name="resistencia">"抵抗: "</string>
+    <string name="retirada">撤退</string>
+</resources>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    ##antonio string
+    <string name="app_name">PokectCollection</string>
+    <string name="web_client_id">826240098438-tft9hf96c99vjqa0bra4uo8k8hse7j1f.apps.googleusercontent.com</string>
+    <string name="image_user">Image user</string>
+    <string name="sets">Sets: %1$s Completed</string>
+    <string name="Back">Back</string>
+    <string name="Changes">Changes</string>
+    <string name="email">Email: %1$s</string>
+    <string name="cards">Cards: %1$s Collected</string>
+    ##Sergio Strings
+
+    #String Login
+    <string name="selector_de_vista">View selector:</string>
+    <string name="user">Email</string>
+    <string name="password">Password</string>
+    <string name="password_incorrecta">Incorrect password</string>
+    <string name="iniciar_sesion">Log in</string>
+    <string name="registro">Register</string>
+    <string name="olvidaste_la_password">"Forgot password "</string>
+    <string name="inicio_con_red_social_google">Sign in with Google</string>
+    <string name="inicio_con_red_social_facebook">Sign in with Facebook</string>
+    <string name="inicio_con_red_social_instagram">Sign in with Instagram</string>
+
+    #String CardDetailScreen
+    <string name="background_image">Background Image</string>
+    <string name="flecha_para_retroceder_volver_a_la_lista_de_cartas">Arrow to go back to card list</string>
+    <string name="habilidades">Skills</string>
+    <string name="ataques">Attacks</string>
+    <string name="no_attack_details_available">No attack details available</string>
+    <string name="normas">Rules</string>
+    <string name="weakness">Weakness: </string>
+    <string name="no_weakness_details_available">No weakness details available</string>
+    <string name="no_resistance_details_available">N/A</string>
+    <string name="legalidad">Legality</string>
+    <string name="informaci_n_adicional">Additional Information</string>
+    <string name="artist">Artist:</string>
+    <string name="set_id">Set ID:</string>
+    <string name="set_serie">Set Series:</string>
+    <string name="set">Set:</string>
+    <string name="number">Number: </string>
+    <string name="regulation_mark">Regulation Mark: </string>
+    <string name="icono_que_indica_las_habilidades">Icon indicating skills</string>
+    <string name="icono_de_la_rareza">Rarity icon</string>
+    <string name="button_image">Button Image</string>
+    <string name="standard">Standard</string>
+    <string name="expanded">Expanded</string>
+    <string name="unlimited">Unlimited</string>
+    <string name="rarity">Rarity: %1$s</string>
+
+    #String CardListScreen
+    <string name="numero">Number: %1$s</string>
+    <string name="collection_symbol">Collection symbol</string>
+    <string name="tienes">You have: %1$s</string>
+    <string name="coleccion">"Collection: "</string>
+    <string name="icono_clicable">Clickable icon</string>
+    <string name="modo_de_vista">View mode:</string>
+    <string name="buscar_carta">Search Card</string>
+    <string name="lista_de_cartas">Card List</string>
+    <string name="crear_lista_de_cartas">Create Card List</string>
+    <string name="buscar_cartas">Search cards</string>
+
+    #String RegisterScreen
+    <string name="fondoregistro">Registration Background</string>
+    <string name="nombre_publico">Public name</string>
+    <string name="escribe_tu_nombre_publico">Enter your public name</string>
+    <string name="email_label">Email</string>
+    <string name="escribe_tu_email">Enter your email</string>
+    <string name="contraseña">Password</string>
+    <string name="crea_una_contraseña">Create a password</string>
+    <string name="repetir_contraseña">Repeat password</string>
+    <string name="repite_tu_contraseña">Repeat your password</string>
+    <string name="registrar">Register</string>
+    <string name="volver">Back</string>
+    <string name="nombre_debe_tener_6_caracteres">Name must have at least 6 characters</string>
+    <string name="formato_de_correo_invalido">Invalid email format</string>
+    <string name="contraseña_debe_tener_8_caracteres_y_un_numero">Password must have at least 8 characters and one number</string>
+    <string name="contraseñas_no_coinciden">Passwords do not match</string>
+
+    #String SetDetailScreen
+    <string name="fecha_de_salida">Release date %1$s</string>
+    <string name="tiene">"Has: %1$s/%2$s "</string>
+
+    #String SetListScreen
+    <string name="buscar_set">Search Set</string>
+    <string name="lista_de_sets">Set List</string>
+    <string name="crear_lista">Create list</string>
+
+    #String CrearCardList
+    <string name="crear_listas_de_cartas">Create Card Lists</string>
+    <string name="guardar">Save</string>
+    <string name="cerrar">Close</string>
+
+    #String SplashScreen
+    <string name="cargando">Loading...</string>
+    <string name="lista_creada">List created</string>
+    <string name="listas_personalizadas">Custom Lists</string>
+    <string name="guardar_lista">Save List</string>
+    <string name="logro_conseguido">Achievement Unlocked</string>
+
+    #Top bar
+    <string name="perfil">Profile</string>
+    <string name="ver_listas">View lists</string>
+    <string name="cerrar_sesion">Log out</string>
+    <string name="fecha_de_ingreso">Entry date</string>
+    <string name="sets_completados">Sets completed</string>
+    <string name="carta_conseguida">Card obtained</string>
+    <string name="medallas">Medals</string>
+    <string name="cancelar">Cancel</string>
+    <string name="por_favor_ingrese_nombre_de_la_lista">Please enter the list name</string>
+    <string name="nombre_de_la_lista">List name</string>
+    <string name="selecciona_foto_de_perfil">Select profile picture</string>
+    <string name="cambiar_nombre">Change name</string>
+    <string name="nombre">Name</string>
+    <string name="imagen_de_logro">Achievement image</string>
+    <string name="registra_tu_primera_carta">Register your first card</string>
+    <string name="crea_tu_primera_lista_de_cartas">Create your first card list</string>
+    <string name="completa_tu_primer_set">Complete your first set</string>
+
+
+    <string name="resistencia">"Resistance: "</string>
+    <string name="retirada">Retreat</string>
+</resources>

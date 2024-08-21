@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    ##antonio string
+    <string name="app_name">PokectCollection</string>
+    <string name="web_client_id">826240098438-tft9hf96c99vjqa0bra4uo8k8hse7j1f.apps.googleusercontent.com</string>
+    <string name="image_user">Imagem do usuário</string>
+    <string name="sets">Conjuntos: %1$s Completados</string>
+    <string name="Back">Voltar</string>
+    <string name="Changes">Alterações</string>
+    <string name="email">Email: %1$s</string>
+    <string name="cards">Cartas: %1$s Coletadas</string>
+    ##Sergio Strings
+
+    #String Login
+    <string name="selector_de_vista">Seletor de visualização:</string>
+    <string name="user">Email</string>
+    <string name="password">Senha</string>
+    <string name="password_incorrecta">Senha incorreta</string>
+    <string name="iniciar_sesion">Iniciar sessão</string>
+    <string name="registro">Registrar</string>
+    <string name="olvidaste_la_password">"Esqueceu a senha "</string>
+    <string name="inicio_con_red_social_google">Iniciar com Google</string>
+    <string name="inicio_con_red_social_facebook">Iniciar com Facebook</string>
+    <string name="inicio_con_red_social_instagram">Iniciar com Instagram</string>
+
+    #String CardDetailScreen
+    <string name="background_image">Imagem de fundo</string>
+    <string name="flecha_para_retroceder_volver_a_la_lista_de_cartas">Seta para voltar à lista de cartas</string>
+    <string name="habilidades">Habilidades</string>
+    <string name="ataques">Ataques</string>
+    <string name="no_attack_details_available">Nenhum detalhe de ataque disponível</string>
+    <string name="normas">Regras</string>
+    <string name="weakness">Fraqueza: </string>
+    <string name="no_weakness_details_available">Nenhum detalhe de fraqueza disponível</string>
+    <string name="no_resistance_details_available">N/A</string>
+    <string name="legalidad">Legalidade</string>
+    <string name="informaci_n_adicional">Informações adicionais</string>
+    <string name="artist">Artista:</string>
+    <string name="set_id">ID do Conjunto:</string>
+    <string name="set_serie">Série do Conjunto:</string>
+    <string name="set">Conjunto:</string>
+    <string name="number">Número: </string>
+    <string name="regulation_mark">Marca de Regulamentação: </string>
+    <string name="icono_que_indica_las_habilidades">Ícone que indica habilidades</string>
+    <string name="icono_de_la_rareza">Ícone de raridade</string>
+    <string name="button_image">Imagem do botão</string>
+    <string name="standard">Padrão</string>
+    <string name="expanded">Expandido</string>
+    <string name="unlimited">Ilimitado</string>
+    <string name="rarity">Raridade: %1$s</string>
+
+    #String CardListScreen
+    <string name="numero">Número: %1$s</string>
+    <string name="collection_symbol">Símbolo da coleção</string>
+    <string name="tienes">Você tem: %1$s</string>
+    <string name="coleccion">"Coleção: "</string>
+    <string name="icono_clicable">Ícone clicável</string>
+    <string name="modo_de_vista">Modo de visualização:</string>
+    <string name="buscar_carta">Buscar Carta</string>
+    <string name="lista_de_cartas">Lista de Cartas</string>
+    <string name="crear_lista_de_cartas">Criar Lista de Cartas</string>
+    <string name="buscar_cartas">Buscar Cartas</string>
+
+    #String RegisterScreen
+    <string name="fondoregistro">Fundo de Registro</string>
+    <string name="nombre_publico">Nome público</string>
+    <string name="escribe_tu_nombre_publico">Digite seu nome público</string>
+    <string name="email_label">Email</string>
+    <string name="escribe_tu_email">Digite seu email</string>
+    <string name="contraseña">Senha</string>
+    <string name="crea_una_contraseña">Crie uma senha</string>
+    <string name="repetir_contraseña">Repetir senha</string>
+    <string name="repite_tu_contraseña">Repita sua senha</string>
+    <string name="registrar">Registrar</string>
+    <string name="volver">Voltar</string>
+    <string name="nombre_debe_tener_6_caracteres">O nome deve ter pelo menos 6 caracteres</string>
+    <string name="formato_de_correo_invalido">Formato de email inválido</string>
+    <string name="contraseña_debe_tener_8_caracteres_y_un_numero">A senha deve ter pelo menos 8 caracteres e um número</string>
+    <string name="contraseñas_no_coinciden">As senhas não coincidem</string>
+
+    #String SetDetailScreen
+    <string name="fecha_de_salida">Data de lançamento %1$s</string>
+    <string name="tiene">"Possui: %1$s/%2$s "</string>
+
+    #String SetListScreen
+    <string name="buscar_set">Buscar Conjunto</string>
+    <string name="lista_de_sets">Lista de Conjuntos</string>
+    <string name="crear_lista">Criar lista</string>
+
+    #String CrearCardList
+    <string name="crear_listas_de_cartas">Criar Listas de Cartas</string>
+    <string name="guardar">Salvar</string>
+    <string name="cerrar">Fechar</string>
+
+    #String SplashScreen
+    <string name="cargando">Carregando...</string>
+    <string name="lista_creada">Lista criada</string>
+    <string name="listas_personalizadas">Listas Personalizadas</string>
+    <string name="guardar_lista">Salvar Lista</string>
+    <string name="logro_conseguido">Conquista Alcançada</string>
+
+    #Top bar
+    <string name="perfil">Perfil</string>
+    <string name="ver_listas">Ver listas</string>
+    <string name="cerrar_sesion">Sair</string>
+    <string name="fecha_de_ingreso">Data de ingresso</string>
+    <string name="sets_completados">Conjuntos completados</string>
+    <string name="carta_conseguida">Carta obtida</string>
+    <string name="medallas">Medalhas</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="por_favor_ingrese_nombre_de_la_lista">Por favor, insira o nome da lista</string>
+    <string name="nombre_de_la_lista">Nome da lista</string>
+    <string name="selecciona_foto_de_perfil">Selecione a foto do perfil</string>
+    <string name="cambiar_nombre">Mudar nome</string>
+    <string name="nombre">Nome</string>
+    <string name="imagen_de_logro">Imagem da conquista</string>
+    <string name="registra_tu_primera_carta">Registre sua primeira carta</string>
+    <string name="crea_tu_primera_lista_de_cartas">Crie sua primeira lista de cartas</string>
+    <string name="completa_tu_primer_set">Complete seu primeiro conjunto</string>
+
+    <string name="resistencia">"Resistência: "</string>
+    <string name="retirada">Retirada</string>
+
+</resources>

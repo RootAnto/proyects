@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "826240098438",
+    "project_id": "colectora-7bc7e",
+    "storage_bucket": "colectora-7bc7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826240098438:android:db28c8772c25ddb071f107",
+        "android_client_info": {
+          "package_name": "com.example.pokectcollection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826240098438-tft9hf96c99vjqa0bra4uo8k8hse7j1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh0lghp1xUb_RGys5kW1SEaZJNJ2MS-bM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826240098438-tft9hf96c99vjqa0bra4uo8k8hse7j1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
