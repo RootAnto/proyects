@@ -23,7 +23,8 @@ class FirebaseRepositoryConnection:
         """
         try:
             # Load certification
-            self.cred = credentials.Certificate("static/clase-8cdd6-firebase-adminsdk-8xoiy-90f1d0006f.json")
+            self.cred = credentials.Certificate("static/file_data_base/clase-8cdd6-firebase-adminsdk-8xoiy-90f1d0006f"
+                                                ".json")
             # Initialize the Firebase app with the loaded credentials
             if not firebase_admin._apps:
                 firebase_admin.initialize_app(self.cred)

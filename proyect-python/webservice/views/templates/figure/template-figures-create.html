@@ -1,94 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page with Carousel</title>
-    <!-- Include Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards/create_cards.css') }}">
-</head>
-<body>
-    <!-- Dust particles -->
-    <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <!-- Dust particles end -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <section class="wrapper my-5 mx-auto">
-                    <div class="form signup">
-                        <header>Figure Registration</header>
-                        {% if mensaje %}
-                            <div id="mensaje" class="alert alert-danger" style="display: {% if mensaje %}block{% else %}none{% endif %}">
-                                {{ mensaje }}
-                            </div>
-                        {% endif %}
-                        <form action="/figures/create" method="post">
-                            <input type="text" placeholder="Figure Name" id="name" name="name" required />
-                            <input type="text" placeholder="Series" id="series" name="series" required />
-                            <input type="number" placeholder="Price" id="price" name="price" required />
-                            <input type="number" placeholder="Year" id="year" name="year" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" />
-                            <div class="checkbox">
-                                <input type="checkbox" id="confirmCheck" name="check" required />
-                                <label for="confirmCheck">Do you want to register this figure?</label>
-                            </div>
-                            <input type="submit" value="Register" />
-                            <a href='/index-figures' class="btn btn-primary">Back to Menu</a>
-                        </form>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page with Carousel</title>
+        <!-- Include Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/figures/create_figures.css') }}">
+    </head>
+    <body>
+        <!-- Dust particles -->
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!-- Dust particles end -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="wrapper my-5 mx-auto">
+                        <div class="form signup">
+                            <header>Figure Registration</header>
+                            {% if mensaje %}
+                                <div id="mensaje" class="alert alert-danger" style="display: {% if mensaje %}block{% else %}none{% endif %}">
+                                    {{ mensaje }}
+                                </div>
+                            {% endif %}
+                            <form action="/figures/create" method="post">
+                                <input type="text" placeholder="Figure Name" id="name" name="name" required />
+                                <input type="text" placeholder="Series" id="series" name="series" required />
+                                <input type="number" placeholder="Price" id="price" name="price" required />
+                                <input type="number" placeholder="Year" id="year" name="year" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" />
+                                <div class="checkbox">
+                                    <input type="checkbox" id="confirmCheck" name="check" required />
+                                    <label for="confirmCheck">Do you want to register this figure?</label>
+                                </div>
+                                <input type="submit" value="Register" />
+                                <a href='/index-figures' class="btn btn-primary">Back to Menu</a>
+                            </form>
 
-                    </div>
-                    <div class="form login">
-                        <header>Information</header>
-                        <form action="#">
-                            <h2>Registration Instructions:</h2>
-                            <p>Name: Can contain letters and numbers.</p>
-                            <p>Series: Can contain letters and numbers.</p>
-                            <p>Year: Should contain only numbers.</p>
-                            <p>Price: Only numbers with or without decimals are allowed.</p>
-                        </form>
-                    </div>
-                </section>
+                        </div>
+                        <div class="form login">
+                            <header>Information</header>
+                            <form action="#">
+                                <h2>Registration Instructions:</h2>
+                                <p>Name: Can contain letters and numbers.</p>
+                                <p>Series: Can contain letters and numbers.</p>
+                                <p>Year: Should contain only numbers.</p>
+                                <p>Price: Only numbers with or without decimals are allowed.</p>
+                            </form>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- JavaScript to toggle between Signup and Login views -->
-    <script>
-        const wrapper = document.querySelector(".wrapper"),
-              signupHeader = document.querySelector(".signup header"),
-              loginHeader = document.querySelector(".login header");
+        <!-- JavaScript to toggle between Signup and Login views -->
+        <script>
+            const wrapper = document.querySelector(".wrapper"),
+                  signupHeader = document.querySelector(".signup header"),
+                  loginHeader = document.querySelector(".login header");
 
-        loginHeader.addEventListener("click", () => {
-            wrapper.classList.add("active");
-        });
+            loginHeader.addEventListener("click", () => {
+                wrapper.classList.add("active");
+            });
 
-        signupHeader.addEventListener("click", () => {
-            wrapper.classList.remove("active");
-        });
+            signupHeader.addEventListener("click", () => {
+                wrapper.classList.remove("active");
+            });
 
-        // Function to hide the message after a specified time
-        function hideMessage() {
-            setTimeout(function() {
-                document.getElementById('mensaje').style.display = 'none';
-            }, 2000); // Hide the message after 2 seconds (2000 milliseconds)
-        }
+            // Function to hide the message after a specified time
+            function hideMessage() {
+                setTimeout(function() {
+                    document.getElementById('mensaje').style.display = 'none';
+                }, 2000); // Hide the message after 2 seconds (2000 milliseconds)
+            }
 
-        // Call the function to hide the message when the page fully loads
-        window.onload = hideMessage;
-    </script>
+            // Call the function to hide the message when the page fully loads
+            window.onload = hideMessage;
+        </script>
 
-    <!-- Include Bootstrap JS at the end of the body for better performance -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <!-- Include Bootstrap JS at the end of the body for better performance -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>

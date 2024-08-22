@@ -1,0 +1,534 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(80deg, #9370DB, #14B76E);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Para centrar verticalmente en la pantalla */
+}
+.btn-primary {
+            background-color: #229954;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1c7e47;
+}
+h1 {
+    text-align: center;
+    background: linear-gradient(to right, #3498db, #9b59b6, #e91e63); /* Degradado lineal de azul a rosa */
+    -webkit-background-clip: text; /* Aplicar el fondo solo al texto */
+    -webkit-text-fill-color: transparent; /* Hacer transparente el color del texto para que se muestre el degradado */
+}
+
+
+.scroll-table {
+    max-height: 400px; /* Altura máxima de la tabla */
+    overflow-y: auto; /* Habilita el scroll vertical si se excede la altura */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.bloque1 {
+    padding: 10px;
+    width: 60%; /* Ajustar el ancho según tu preferencia */
+    height: auto;
+    text-align: left; /* Para asegurar que el contenido esté alineado a la izquierda */
+}
+
+
+.bloqueA, .bloqueB{
+  width:100%; 
+  height:auto;
+}
+
+/*FORMULARIO*/
+.login {
+  width:100%;
+  margin: 30px auto;
+  font-size: 12px;
+  box-shadow: 0 0 50px rgba(0,0,0,.6);
+}
+
+.bloque3, .bloque4{
+  float:left;
+  width:50%;
+  height:auto;
+}
+
+/* Reset top and bottom margins from certain elements */
+.login-header,.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.login-header {
+  margin-top:-0.99em;
+  background:  #229954 ;
+  padding: 10px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.login-container {
+  /*background: #ebebeb; /*CUERPO*/
+  padding: 12px;
+}
+
+/* Every row inside .login-container is defined with p tags */
+.login p {
+  padding: 12px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 8px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+/*.login input[type="email"],*/
+.login input[type="text"] {
+  border-color: #bbb;
+  color: #555;
+}
+
+/* Text fields' focus effect *
+.login input[type="text"]:focus,*/
+.login input[type="text"]:focus {
+  border-color: #888;
+}
+
+.login input[type="submit"] {
+  background:  #229954; 
+  border-color: transparent;
+  color: #fff; /*TEXTO IMPUT*/
+  cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+  background:  #c0392b; 
+}
+
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+  border-color: #05a;
+}
+/*FIN FORMULARIO*/
+
+/*TABLA*/
+
+.container2 {
+  margin: 8px auto;
+  top: 0%;
+  left: 0%;
+  -webkit-transform: translate(0%,0%);
+          transform: translate(0%,0%);
+}
+table {
+  width: 100%;
+  height:auto;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.6);
+}
+th,td {
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+th {
+  text-align: left;
+}
+thead th {
+  background-color: #55608f;
+}
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+tbody td {
+  position: relative;
+}
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+/*FIN TABLA*/
+
+/**/
+/*FORMULARIO BUSQUEDA*/
+
+.cf:before, .cf:after{
+      content:"";
+      display:table;
+    }
+    
+    .cf:after{
+      clear:both;
+    }
+
+    .cf{
+      zoom:1;
+    }
+
+.form-wrapper {
+        width: 90%;
+        height: 23px;
+        padding: 6px;
+        margin: -1px auto -1px auto;
+        background: #444;
+        background: rgba(0,0,0,.2);
+        -moz-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+        box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+    }
+
+.form-wrapper input {
+        width: 75%; /*tamaño caja texto*/
+        height: auto;
+        padding: 5px 5px;
+        float: left;    
+        font: bold 12px 'lucida sans', 'trebuchet MS', 'Tahoma';
+        border: 0;
+        background: #eee;     
+    }
+
+.form-wrapper input:focus {
+        outline: 0;
+        background: #fff;
+        -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+        -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+        box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+    }
+
+.form-wrapper input::-webkit-input-placeholder {
+       color: #999;
+       font-weight: normal;
+       font-style: italic;
+    }
+
+ .form-wrapper input:-moz-placeholder {
+        color: #999;
+        font-weight: normal;
+        font-style: italic;
+    }
+
+ .form-wrapper input:-ms-input-placeholder {
+        color: #999;
+        font-weight: normal;
+        font-style: italic;
+    }    
+    
+ .form-wrapper button {
+		overflow: visible;
+        position: relative;
+        float: right;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        height: auto;
+        width: 20%;
+        font: 12px/25px 'Open Sans';
+        color: #fff;
+        text-transform: uppercase;
+        background: #229954;     
+        text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    }
+
+.form-wrapper button:hover{		
+        background: #d83c3c;
+    }
+
+.form-wrapper button:active,
+    .form-wrapper button:focus{   
+        background: #c42f2f;    
+    }
+
+.form-wrapper button:before { /*Trglo*/
+        content: '';
+        position: absolute;
+        border-width: 10px 10px 10px 0;
+        border-style: solid solid solid none;
+        border-color: transparent #229954 transparent;
+        top: 3px;
+        left: -9px;
+    }
+.form-wrapper button:hover:before{
+        border-right-color: #d83c3c;
+    }
+
+.form-wrapper button:focus:before{
+        border-right-color: #c42f2f;
+    }    
+    
+    .form-wrapper button::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+.byline p{
+  text-align:center;
+  color:#c6c6c6;
+  font: bold 18px Arial, Helvetica, Sans-serif;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+.byline p a{
+  color:#d83c3c;
+  text-decoration:none;
+}
+/*FIN FORMULARIO BUSQUEDA*/
+/* Estilo del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #444; /* Color de fondo similar al formulario de búsqueda */
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Sombra */
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    color: #fff; /* Color del texto */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#confirmDelete {
+    background-color: #229954; /* Color de fondo similar al botón de búsqueda */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#confirmDelete:hover {
+    background-color: #1c7944; /* Color de fondo similar al botón de búsqueda cuando se hace hover */
+
+
+}
+
+
+ /* Style for the button */
+.btn-primary {
+    background-color: #229954;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1c7e47;
+}
+
+ /* Modal styles */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,0.4);
+            }
+
+            .modal-content {
+                background-color: #f8bbd0; /* Pink */
+                margin: 15% auto;
+                padding: 20px;
+                border-radius: 20px; /* Rounded corners */
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow */
+                width: 80%;
+                max-width: 400px;
+                text-align: center;
+            }
+
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            #confirmDelete {
+                background-color: #8bc34a; /* Green */
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                margin-top: 10px;
+                transition: background-color 0.3s ease;
+            }
+
+#confirmDelete:hover {
+    background-color: #689f38; /* Darker green */
+}
+.btn-primary {
+    background-color: #229954;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1c7e47;
+}
+
+.btn-primary {
+    background-color: #229954;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1c7e47;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #f0f8ff, #dcdcdc); /* Gradient background */
+    margin: 10% auto; /* Centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px; /* Rounded corners */
+    width: 60%; /* Could be more or less, depending on screen size */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+    color: #4CAF50;
+}
+
+.close {
+    color: #333;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form label {
+    font-weight: bold; /* Make labels bold */
+}
+
+form input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%; /* Full width inputs */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+form button {
+    background-color: #229954;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #1c7e47;
+}

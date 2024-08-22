@@ -7,7 +7,7 @@
 
 body, html {
   height: 100%;
-  background-image: url('../../img/fondoLogin.png'); /* Ensure the image path is correct */
+  background-image: url('../../images/images_login/background_login.png'); /* Ensure the image path is correct */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

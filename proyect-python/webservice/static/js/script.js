@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const addHoverEffect = (iconId, normalImg, hoverImg) => {
     const iconElement = document.getElementById(iconId);
-    const imgElement = iconElement.querySelector('img');
+    const imgElement = iconElement.querySelector('images');
 
     iconElement.addEventListener('mouseover', () => {
       imgElement.src = hoverImg;
@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  addHoverEffect('facebook-icon', '/static/img/f1.png', '/static/img/facebookico.png');
-  addHoverEffect('twitter-icon', '/static/img/t1.png', '/static/img/twitterico.png');
-  addHoverEffect('google-icon', '/static/img/g1.png', '/static/img/googleico.png');
+  addHoverEffect('facebook-icon', '/static/images/f1.png', '/static/images/facebookico.png');
+  addHoverEffect('twitter-icon', '/static/images/t1.png', '/static/images/twitterico.png');
+  addHoverEffect('google-icon', '/static/images/g1.png', '/static/images/googleico.png');
 });
 
 

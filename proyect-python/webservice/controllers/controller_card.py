@@ -86,14 +86,9 @@ class ControllerCards:
             Returns
             -------
             str
-                The rendered HTML template for deleting a card or an error template if no cards are found.
+                The rendered HTML template for deleting a card.
             """
-            found_cards = CardQueries.show_all_cards()
-
-            if not found_cards:
-                return render_template('card/template-cards-error.html')
-            else:
-                return render_template('card/template-cards-delete.html')
+            return render_template('card/template-cards-delete.html')
 
         @app.route('/delete-card/search', methods=['POST'])
         def delete_card_search():

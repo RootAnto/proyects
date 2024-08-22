@@ -3,118 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario buscar figuras</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards/general_cards.css') }}">
-    <style>
-        /* Estilo para el botón */
-        .btn-primary {
-            background-color: #229954;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #1c7e47;
-        }
-    </style>
+    <title>Figure Search Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/figures/general_figures.css') }}">
 </head>
-
 <body>
     <div class="bloque1">
         <div class="bloqueA">
-            <!-- Contenedor de la tabla -->
+            <!-- Table container -->
             <div class="container2 scroll-table">
-                <!-- Tabla de resultados -->
-                <h1>Modificar Figuras</h1>
+                <!-- Results table -->
+                <h1>Update Figures</h1>
                 <table>
-                    <!-- Encabezados de la tabla -->
+                    <!-- Table headers -->
                     <thead>
                         <tr>
-                            <!-- Formulario de búsqueda -->
+                            <!-- Search form -->
                             <th colspan="5">
-                                <form class="form-wrapper cf" method="POST" action="/TemplateFiguras/ModificarBusqueda">
-                                    <!-- Campo de entrada de texto para búsqueda -->
-                                    <input type="text" name="valor" placeholder="Buscar aquí tu figura..." required>
-                                    <!-- Botón de búsqueda -->
-                                    <button type="submit">Buscar</button>
+                                <form class="form-wrapper cf" method="POST" action="/figures/search-update">
+                                    <!-- Text input field for search -->
+                                    <input type="text" name="value" placeholder="Search your figure here..." required>
+                                    <!-- Search button -->
+                                    <button type="submit">Search</button>
                                 </form>
                             </th>
                         </tr>
-                        <!-- Encabezados de columna -->
+                        <!-- Column headers -->
                         <tr>
-                            <th>Nombre</th>
-                            <th>Serie</th>
-                            <th>Precio</th>
-                            <th>Año</th>
+                            <th>Name</th>
+                            <th>Series</th>
+                            <th>Price</th>
+                            <th>Year</th>
                         </tr>
                     </thead>
                     <tbody>
-                    {% for figura in resultados %}
+                    {% for figure in result %}
                     <tr>
-                        <td>{{ figura.nombre }}</td>
-                        <td>{{ figura.serie }}</td>
-                        <td>{{ figura.precio }}</td>
-                        <td>{{ figura.anio }}</td>
+                        <td>{{ figure.name }}</td>
+                        <td>{{ figure.series }}</td>
+                        <td>{{ figure.price }}</td>
+                        <td>{{ figure.year }}</td>
                     </tr>
                     {% endfor %}
                     </tbody>
                 </table>
             </div>
-            <!-- Fin del contenedor de la tabla -->
+            <!-- End of table container -->
+            <div class="button-container">
+                <a href="/index-figures" class="btn btn-primary">Back to Menu</a>
+            </div>
         </div>
     </div>
 
     <!-- Modal -->
- <div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <form id="modifyForm" action="/TemplateFiguras/ModificarQuery" method="POST">
-            <p>¿Qué quieres modificar de esta figura?</p>
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="nuevo_nombre" required><br><br>
-            <!-- Eliminar el campo de serie -->
-            <label for="price">Precio:</label>
-            <input type="number" id="price" name="nuevo_precio" required><br><br>
-            <label for="year">Año:</label>
-            <input type="number" id="anio" name="nuevo_anio" required maxlength="4"><br><br>
-            <!-- Agregar un campo oculto para la serie -->
-            <input type="hidden" id="serie" name="serie" required><br><br>
-            <button type="submit">Modificar</button>
-        </form>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="modifyForm" action="/figures/modify-query" method="POST">
+                <p>Modify Figure</p>
+                <label for="new_name">Name:</label>
+                <input type="text" id="new_name" name="new_name" required><br><br>
+                <label for="new_series">Series:</label>
+                <input type="text" id="new_series" name="new_series" required><br><br>
+                <label for="new_price">Price:</label>
+                <input type="number" id="new_price" name="new_price" required step="0.01"><br><br>
+                <label for="new_year">Year:</label>
+                <input type="number" id="new_year" name="new_year" required maxlength="4"><br><br>
+                <!-- Hidden field for the current series -->
+                <input type="hidden" id="current_series" name="current_series" value=""><br><br>
+                <button type="submit">Update</button>
+            </form>
+        </div>
     </div>
-</div>
 
-<!-- Script JavaScript para el crecimiento dinámico de la tabla y la interacción con el modal -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Selecciona todas las filas de la tabla
-        var tableRows = document.querySelectorAll('tbody tr');
+    <!-- JavaScript for table dynamic growth and modal interaction -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to handle the modal interactions
+            function showModal(row) {
+                const modal = document.getElementById('myModal');
+                const closeBtn = document.querySelector('.close');
 
-        // Agrega un controlador de eventos de clic a cada fila
-        tableRows.forEach(function(row) {
-            row.addEventListener('click', function() {
-                // Muestra el modal al hacer clic en una fila
-                document.getElementById('myModal').style.display = 'block';
+                // Show the modal
+                modal.style.display = 'block';
 
-                // Captura la serie de la fila seleccionada y la coloca en el campo oculto
-                var serie = row.cells[1].textContent; // Cambiar el índice según la posición de la serie en la fila
-                document.getElementById('serie').value = serie;
+                // Populate modal fields
+                const name = row.cells[0].textContent.trim();
+                const series = row.cells[1].textContent.trim();
+                const price = row.cells[2].textContent.trim();
+                const year = row.cells[3].textContent.trim();
 
-                // Cierra el modal si se hace clic en la 'x' (cerrar)
-                document.querySelector('.close').addEventListener('click', function() {
-                    document.getElementById('myModal').style.display = 'none';
+                console.log(`Figure Data: ${name}, ${series}, ${price}, ${year}`);
+
+                // Populate form fields in the modal
+                document.getElementById('current_series').value = series;
+                document.getElementById('new_name').value = name;
+                document.getElementById('new_series').value = series;
+                document.getElementById('new_price').value = price;
+                document.getElementById('new_year').value = year;
+
+                // Close the modal when 'x' is clicked
+                closeBtn.onclick = function() {
+                    modal.style.display = 'none';
+                }
+
+                // Close the modal if clicked outside of modal content
+                window.onclick = function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+            }
+
+            // Select all table rows
+            const tableRows = document.querySelectorAll('tbody tr');
+
+            // Add click event listener to each row
+            tableRows.forEach(function(row) {
+                row.addEventListener('click', function() {
+                    showModal(row);
                 });
             });
         });
-    });
-</script>
-    <a href="/TemplateFiguras" class="btn btn-primary">Volver al Menú</a>
+
+    </script>
 </body>
 </html>

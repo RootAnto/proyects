@@ -113,3 +113,89 @@ class FigureQueries:
 
         # Delete the document from the 'figures' collection based on the provided identifier
         db.collection('figures').document(value).delete()
+
+    @staticmethod
+    def show_all_figures():
+        """
+        Retrieves all figures from the Firestore database.
+
+        This method accesses the Firestore client and queries the 'figures' collection
+        to retrieve all documents. It then iterates over the results, converting each
+        document to a dictionary and adding it to a list. Finally, it returns the list
+        of all figures found in the collection.
+
+        Returns:
+            list: A list of dictionaries representing all figures found in the Firestore collection.
+        """
+        # Access the Firestore client instance
+        db = firestore.client()
+
+        # Query to retrieve all documents in the 'figures' collection
+        results = db.collection('figures').get()
+
+        # Initialize a list to store the query results
+        figures_found = []
+
+        # Iterate over the results and add them to the list
+        for document in results:
+            figures_found.append(document.to_dict())
+
+        # Return the list of found figures
+        return figures_found
+
+    @staticmethod
+    def modify_figure(current_series, new_series, new_name, new_price, new_year):
+        """
+        Modify the details of an existing figure.
+
+        This method updates the details of a figure in the Firestore database. If the series of the figure
+        changes, it creates a new document with the new series and deletes the old document.
+
+        Parameters:
+            current_series (str): The current series identifier of the figure to be updated.
+            new_series (str): The new series identifier for the figure.
+            new_name (str): The new name for the figure.
+            new_price (float): The new price for the figure.
+            new_year (int): The new year for the figure.
+
+        Returns:
+            str: A message indicating the result of the operation.
+        """
+        db = firestore.client()
+
+        # Check if the figure exists
+        old_figure_ref = db.collection('figures').document(current_series)
+        old_figure = old_figure_ref.get()
+
+        if old_figure.exists:
+            if current_series != new_series:
+                # Create a new document with the new series
+                new_figure_ref = db.collection('figures').document(new_series)
+                new_figure_ref.set({
+                    'name': new_name,
+                    'series': new_series,
+                    'price': new_price,
+                    'year': new_year
+                })
+
+                # Delete the old document
+                old_figure_ref.delete()
+            else:
+                # Update the existing document
+                old_figure_ref.update({
+                    'name': new_name,
+                    'series': new_series,
+                    'price': new_price,
+                    'year': new_year
+                })
+
+            return "Figure updated successfully"
+        else:
+            return "Figure not found"
+
+
+
+
+
+
+
