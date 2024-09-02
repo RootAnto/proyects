@@ -48,8 +48,11 @@ public class Client {
         try {
             boolean exit = false;
             do {
-                String opcion = stringValidation("1.Create flyght\n2.Look for a flight\n3.Show all flights\n" +
-                        "0.Exit", scanner, "\\d+");
+                String opcion = stringValidation("""
+                        1.Create flyght
+                        2.Look for a flight
+                        3.Show all flights
+                        0.Exit""", scanner, "\\d+");
                 switch (opcion) {
                     case "1":
                         createFlight(scanner);
@@ -83,8 +86,13 @@ public class Client {
         try{
             do {
                 System.out.println();
-                String opcion = stringValidation("1.Assign passenger flight\n2.Passenger in flyght\n" +
-                        "3.Update passenger\n4.Delete Passenger\n5.Show all passengers\n0.Exit", scanner, "\\d+");
+                String opcion = stringValidation("""
+                        1.Assign passenger flight
+                        2.Passenger in flyght
+                        3.Update passenger
+                        4.Delete Passenger
+                        5.Show all passengers
+                        0.Exit""", scanner, "\\d+");
 
                 switch (opcion) {
                     case "1":
