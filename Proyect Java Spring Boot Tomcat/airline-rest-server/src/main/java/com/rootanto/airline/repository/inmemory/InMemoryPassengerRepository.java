@@ -1,7 +1,7 @@
 package com.rootanto.airline.repository.inmemory;
 
-import com.rootanto.airline.entity.Passenger;
 import com.rootanto.airline.repository.PassengerRepository;
+import com.rootanto.airline.entity.Passenger;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

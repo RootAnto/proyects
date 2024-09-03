@@ -1,8 +1,8 @@
-package org.educa.api;
+package com.rootanto.airline.api;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.educa.dto.ProductFlightDTO;
+import com.rootanto.airline.dto.ProductFlightDTO;
 
 import java.lang.reflect.Type;
 import java.util.List;
@@ -13,6 +13,7 @@ public class ApiProductFlight extends ApiService {
     public ProductFlightDTO findFlightById(String flightId) throws Exception {
         String url = URL + "/flight/{flightId}";
         url = url.replace("{flightId}", flightId);
+        System.out.println(flightId);
         String body = connection.doGet(url);
         Gson gson = new Gson();
         return gson.fromJson(body, ProductFlightDTO.class);

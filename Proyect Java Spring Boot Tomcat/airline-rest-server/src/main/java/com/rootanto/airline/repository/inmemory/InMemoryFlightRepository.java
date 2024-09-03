@@ -25,7 +25,9 @@ public class InMemoryFlightRepository implements FlightRepository {
     }
 
     @Override
-    public Flight getFlight(String flightId) {
+    public Flight getFlight(
+            String flightId
+    ) {
         return flights.get(flightId);
     }
 

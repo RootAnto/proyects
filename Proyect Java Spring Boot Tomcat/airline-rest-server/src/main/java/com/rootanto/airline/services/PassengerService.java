@@ -1,10 +1,9 @@
 package com.rootanto.airline.services;
 
-import com.rootanto.airline.entity.Passenger;
 import com.rootanto.airline.repository.PassengerRepository;
+import com.rootanto.airline.entity.Passenger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

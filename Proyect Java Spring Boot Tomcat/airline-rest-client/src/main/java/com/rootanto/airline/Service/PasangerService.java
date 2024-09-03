@@ -1,7 +1,7 @@
-package org.educa.Service;
+package com.rootanto.airline.Service;
 
-import org.educa.api.ApiProductPassenger;
-import org.educa.dto.ProductPassengerDTO;
+import com.rootanto.airline.api.ApiProductPassenger;
+import com.rootanto.airline.dto.ProductPassengerDTO;
 
 import java.util.List;
 

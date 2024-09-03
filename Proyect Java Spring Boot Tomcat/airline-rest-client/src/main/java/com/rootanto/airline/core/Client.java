@@ -1,15 +1,15 @@
-package org.educa.core;
-import org.educa.Service.FlightService;
-import org.educa.Service.PasangerService;
-import org.educa.api.ApiProductFlight;
-import org.educa.api.ApiProductPassenger;
-import org.educa.dto.ProductFlightDTO;
-import org.educa.dto.ProductPassengerDTO;
-import org.educa.helper.*;
+package com.rootanto.airline.core;
+import com.rootanto.airline.api.ApiProductPassenger;
+import com.rootanto.airline.dto.ProductFlightDTO;
+import com.rootanto.airline.dto.ProductPassengerDTO;
+import com.rootanto.airline.Service.FlightService;
+import com.rootanto.airline.Service.PasangerService;
+import com.rootanto.airline.api.ApiProductFlight;
+import com.rootanto.airline.helper.Metod;
 import java.util.Scanner;
 
-import static org.educa.helper.Metod.confirmation;
-import static org.educa.helper.Metod.stringValidation;
+import static com.rootanto.airline.helper.Metod.confirmation;
+import static com.rootanto.airline.helper.Metod.stringValidation;
 
 
 public class Client {

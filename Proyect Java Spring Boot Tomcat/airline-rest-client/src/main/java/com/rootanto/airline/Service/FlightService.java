@@ -1,7 +1,7 @@
-package org.educa.Service;
-import org.educa.api.ApiProductFlight;
-import org.educa.dto.ProductFlightDTO;
-import org.educa.execption.NotFoundException;
+package com.rootanto.airline.Service;
+import com.rootanto.airline.dto.ProductFlightDTO;
+import com.rootanto.airline.api.ApiProductFlight;
+import com.rootanto.airline.execption.NotFoundException;
 import java.util.List;
 
 public class FlightService {

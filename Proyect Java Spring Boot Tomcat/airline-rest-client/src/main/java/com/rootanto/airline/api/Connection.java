@@ -1,6 +1,6 @@
-package org.educa.api;
+package com.rootanto.airline.api;
 
-import org.educa.execption.NotFoundException;
+import com.rootanto.airline.execption.NotFoundException;
 
 import java.net.URI;
 import java.net.http.HttpClient;

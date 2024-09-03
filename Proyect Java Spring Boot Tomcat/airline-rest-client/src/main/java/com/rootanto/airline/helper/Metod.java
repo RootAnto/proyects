@@ -1,4 +1,4 @@
-package org.educa.helper;
+package com.rootanto.airline.helper;
 
 import java.util.Scanner;
 

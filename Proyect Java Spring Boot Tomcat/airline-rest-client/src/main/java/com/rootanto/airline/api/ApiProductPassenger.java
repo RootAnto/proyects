@@ -1,8 +1,8 @@
-package org.educa.api;
+package com.rootanto.airline.api;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.educa.dto.ProductPassengerDTO;
+import com.rootanto.airline.dto.ProductPassengerDTO;
 import java.lang.reflect.Type;
 import java.util.List;
 

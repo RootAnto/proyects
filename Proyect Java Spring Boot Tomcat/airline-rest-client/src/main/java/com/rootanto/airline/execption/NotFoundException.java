@@ -1,4 +1,4 @@
-package org.educa.execption;
+package com.rootanto.airline.execption;
 
 public class NotFoundException extends Exception {
     public NotFoundException(String message) {

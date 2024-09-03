@@ -1,130 +1,48 @@
 package com.rootanto.airline.controllers;
 
-import com.rootanto.airline.dto.ProductFlightDTO;
-import com.rootanto.airline.dto.ProductPassengerDTO;
+import jakarta.validation.Valid;
 import com.rootanto.airline.entity.Flight;
-import com.rootanto.airline.entity.FlightString;
 import com.rootanto.airline.entity.Passenger;
-import com.rootanto.airline.mappers.ProductFlightMapper;
-import com.rootanto.airline.mappers.ProductPassengerMapper;
 import com.rootanto.airline.services.FlightService;
 import com.rootanto.airline.services.PassengerService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.text.ParseException;
 import java.util.List;
 
-
-
 @RestController
-public class FlightController {
+public class ControllerPassenger {
+
     private final FlightService flightService;
     private PassengerService passengerService;
-    private final ProductFlightMapper productFlightMapper;
-    private final ProductPassengerMapper productPassengerMapper;
-
-    private int count = 1;
 
     // MetodoS para inyeccion de FlightService y PassengerService
     @Autowired
-    public FlightController(FlightService flightService, ProductFlightMapper productFlightMapper, ProductPassengerMapper productPassengerMapper) {
+    public ControllerPassenger(FlightService flightService) {
         this.flightService = flightService;
-        this.productFlightMapper = productFlightMapper;
-        this.productPassengerMapper = productPassengerMapper;
     }
+
     @Autowired
     public void setPassengerService(PassengerService passengerService) {
         this.passengerService = passengerService;
     }
 
-
-    /********************************************  VUELOS *****************************************************/
-    // Metodo para introducir vuelos
-    @PostMapping("/flight")
-    public ResponseEntity<Object> createFlight(@Valid @RequestBody FlightString flightString)  {
-        System.out.println("Creando");
-        try {
-
-            // Utilizar el Mapper para convertir el DTO de cadena a un objeto Flight
-            Flight flight = productFlightMapper.toEntity(flightString);
-
-            boolean created = flightService.addFlight(flight);
-            if (created) {
-                System.out.println("Data reciber flight "+flight);
-                return ResponseEntity.status(HttpStatus.CREATED).body("The flight was created successfully.");
-            } else {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error creating the flight.");
-            }
-
-        } catch (ParseException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid date format.");
-        }
-    }
-
-    //Consulta de vuelos por origen y destino.
-    @GetMapping("/flight")
-    public ResponseEntity<Object> getFlights(
-            @Valid
-            @RequestParam("origin") String origin,
-            @RequestParam("destination") String destination) {
-
-        System.out.println("Searching for flights by origin and destination.");
-
-        // Buscar vuelos con el origen y destino dados
-        List<Flight> flights = flightService.listFlights(origin, destination);
-
-        // Si se encuentran vuelos, devolver una respuesta con los vuelos encontrados
-        if (!flights.isEmpty()) {
-            return ResponseEntity.ok(flights);
-        } else {
-            // Si no se encuentran vuelos, devolver una respuesta HTTP 404 Not Found
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No flights found for the specified criteria.");
-        }
-    }
-
-    //Consulta de un vuelo por id
-    @GetMapping("/flight/{flightId}")
-    public ResponseEntity<Object> getFlight(
-            @PathVariable("flightId") String flightId,
-            @RequestParam(value = "date", required = false) String date) {
-
-
-        System.out.println("Search flight by ID.");
-
-        // Buscar el vuelo por ID y fecha utilizando el servicio de vuelo
-        Flight flight = flightService.getFlight(flightId, date);
-
-        // Si se encuentra el vuelo, convertirlo a DTO usando el mapper
-        if (flight != null) {
-            ProductFlightDTO flightDTO = productFlightMapper.toDTO(flight);
-            return ResponseEntity.ok(flightDTO);
-        } else {
-            // Si no se encuentra el vuelo, devolver una respuesta HTTP 404 Not Found
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Flight with the specified ID not found.");
-        }
-
-    }
-
-
-
-
     /*************************************    PASAGEROS    ****************************************************/
+
     //Crear pasajeros.
     @PostMapping("/flight/{flightId}/passenger")
     public ResponseEntity<Object> addPassengerToFlight(
             @PathVariable("flightId") String flightId,
-            @Valid @RequestBody Passenger passenger){
+            @Valid @RequestBody Passenger passenger) { // El pasagero se valida automaticamente.
+
+        System.out.println("Entering flight information.");
 
         // Verificar si el vuelo existe
         if (flightService.getFlight(flightId, null) == null) {
+
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The flight with the specified ID does not exist.");
         }
-
-        ProductPassengerDTO passengerDTO = productPassengerMapper.toDTO(passenger);
 
         // Agregar el pasajero al vuelo
         boolean add = passengerService.addPassenger(passenger);
@@ -137,47 +55,45 @@ public class FlightController {
         }
     }
 
-
+    //Obtener pasagero por NIF
     @GetMapping("/flight/{flightId}/passenger/{nif}")
     public ResponseEntity<Object> getPassengerInFlight(
             @PathVariable("flightId") String flightId,
             @PathVariable("nif") String nif) {
 
-        // Check if the flight exists
+        System.out.println("Searching for a passenger on a specific flight.");
+
+        // Verificar si el vuelo existe
         Flight flight = flightService.getFlight(flightId, null);
         if (flight == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The flight with the specified ID does not exist.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El vuelo con el ID especificado no existe.");
         }
 
-        // Check if the passenger is on the flight
+        // Verificar si el pasajero esta en el vuelo
         Passenger passenger = passengerService.getPassenger(flightId, nif);
+        System.out.println(passenger);
         if (passenger != null) {
-            // Convert the passenger to a DTO using the mapper
-            ProductPassengerDTO passengerDTO = productPassengerMapper.toDTO(passenger);
-            return ResponseEntity.ok(passengerDTO);
+            return ResponseEntity.ok(passenger);
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The passenger with the specified NIF is not on the flight.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El pasajero con el NIF especificado no esta en el vuelo.");
         }
     }
 
 
-
+    // Actualizar pasajero en el vuelo.
     @PutMapping("/flight/{flightId}/passenger/{nif}")
     public ResponseEntity<Object> updatePassengerInFlight(
             @PathVariable("flightId") String flightId,
             @PathVariable("nif") String nif,
-            @Valid @RequestBody ProductPassengerDTO passengerDTO) {
+            @Valid @RequestBody Passenger passenger) {
 
         try {
-            // Check if the flight exists
+            // Verificar si el vuelo existe
             if (flightService.getFlight(flightId, null) == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The flight with the specified ID does not exist.");
             }
 
-            // Convert the DTO to a passenger entity using the mapper
-            Passenger passenger = productPassengerMapper.toEntity(passengerDTO);
-
-            // Update the passenger in the flight
+            // Actualizar el pasajero en el vuelo
             passengerService.updatePassenger(nif, passenger);
             return ResponseEntity.ok("The passenger was successfully updated in the flight.");
 
@@ -187,16 +103,14 @@ public class FlightController {
     }
 
 
-
     @DeleteMapping("/flight/{flightId}/passenger/{nif}")
-    public ResponseEntity<Object> removePassengerFromFlight(
+    public ResponseEntity<Object> deletePassengerFromFlight(
             @PathVariable("flightId") String flightId,
             @PathVariable("nif") String nif) {
-
         try {
+            System.out.println("Search passanger.");
             // Verificar si el vuelo existe
-            Flight flight = flightService.getFlight(flightId, null);
-            if (flight == null) {
+            if (flightService.getFlight(flightId, null) == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The flight with the ID specified does not exist.");
             }
 
@@ -220,11 +134,10 @@ public class FlightController {
         }
     }
 
-    //Obtenner todos los vuelos
-    @GetMapping("/flight/{flightId}/passenger")
-    public ResponseEntity<Object> getPassengersInFlight(
-            @PathVariable("flightId") String flightId) {
 
+    // Obtener todos los pasajeros.
+    @GetMapping("/flight/{flightId}/passenger")
+    public ResponseEntity<Object> getPassengersInFlight(@PathVariable("flightId") String flightId) {
         try {
             // Verificar si el vuelo existe
             Flight flight = flightService.getFlight(flightId, null);
@@ -234,16 +147,11 @@ public class FlightController {
 
             // Obtener la lista de pasajeros en el vuelo
             List<Passenger> passengers = passengerService.listPassengers(flightId);
-
-            // Convertir la lista de pasajeros a DTOs usando el mapper
-            List<ProductPassengerDTO> passengerDTOs = productPassengerMapper.toDTOs(passengers);
-
-            return ResponseEntity.ok(passengerDTOs);
+            return ResponseEntity.ok(passengers);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The flight with the specified ID does not exist.");
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error retrieving passengers for the flight.");
         }
-
     }
 }

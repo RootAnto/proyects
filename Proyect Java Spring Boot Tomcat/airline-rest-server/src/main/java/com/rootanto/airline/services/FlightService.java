@@ -1,14 +1,12 @@
 package com.rootanto.airline.services;
-
 import com.rootanto.airline.entity.Flight;
 import com.rootanto.airline.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
-public class FlightService  {
+public class FlightService {
 
     private final FlightRepository flightRepository;
 
@@ -26,7 +24,7 @@ public class FlightService  {
     }
 
     public boolean addFlight(Flight flight) {
-        System.out.println("Flight: " + flight);
+        System.out.println("Vuelo: " + flight);
         return flightRepository.add(flight);
     }
 
@@ -37,5 +35,4 @@ public class FlightService  {
     public boolean deleteFlight(String flightId) {
         return flightRepository.delete(flightId);
     }
-
 }

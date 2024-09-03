@@ -1,4 +1,4 @@
-package org.educa.dto;
+package com.rootanto.airline.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
