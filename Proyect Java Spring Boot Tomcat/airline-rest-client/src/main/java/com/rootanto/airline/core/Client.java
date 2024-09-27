@@ -1,10 +1,10 @@
 package com.rootanto.airline.core;
-import com.rootanto.airline.api.ApiProductPassenger;
-import com.rootanto.airline.dto.ProductFlightDTO;
-import com.rootanto.airline.dto.ProductPassengerDTO;
+import com.rootanto.airline.api.ApiPassenger;
+import com.rootanto.airline.dto.FlightDTO;
+import com.rootanto.airline.dto.PassengerDTO;
 import com.rootanto.airline.Service.FlightService;
 import com.rootanto.airline.Service.PasangerService;
-import com.rootanto.airline.api.ApiProductFlight;
+import com.rootanto.airline.api.ApiFlight;
 import com.rootanto.airline.helper.Metod;
 import java.util.Scanner;
 
@@ -15,8 +15,8 @@ import static com.rootanto.airline.helper.Metod.stringValidation;
 public class Client {
     private final FlightService flightService = new FlightService();
     private final PasangerService pasangerService = new PasangerService();
-    private final ApiProductFlight apiProductFlight = new ApiProductFlight();
-    private final ApiProductPassenger apiProductPassenger = new ApiProductPassenger();
+    private final ApiFlight apiFlight = new ApiFlight();
+    private final ApiPassenger apiPassenger = new ApiPassenger();
 
     public void run() {
         try (Scanner scanner = new Scanner(System.in)) {
@@ -121,11 +121,13 @@ public class Client {
     private void createFlight(Scanner scanner)  {
         System.out.println("Registration flights");
 
-        String origin = stringValidation("Enter the origin of the flight(France):", scanner, "([A-Z][a-z]*)+");
-        String destination = stringValidation("Enter the destination of the flight(Rome):",scanner,"([A-Z][a-z]*)+");
-        String date = stringValidation("Enter date(DD-MM-YYYY):",scanner,"^(0[1-9]|[1-2][0-9]|3[0-1])-(0[1-9]|1[0-2])-(\\d{4})$");
+        System.out.println("Enter the origin of the flight(France):");
+        String origin = scanner.nextLine();
 
-        apiProductFlight.create(new ProductFlightDTO("", origin, destination, date));
+        String destination = stringValidation("Enter the destination of the flight(Rome):",scanner,"([A-Z][a-z]*)+");
+        String date = stringValidation("Enter date(DD/MM/YYYY):",scanner,"^\\d{2}/\\d{2}/\\d{4}$");
+        date.formatted(date);
+        apiFlight.create(new FlightDTO("", origin, destination, date));
     }
 
 
@@ -156,14 +158,14 @@ public class Client {
 
 
         int seatNumber = Integer.parseInt(seat);
-        apiProductPassenger.addPassengerToFlight(new ProductPassengerDTO(nif,id,name,surname,eMail,seatNumber));
+        apiPassenger.addPassengerToFlight(new PassengerDTO(nif,id,name,surname,eMail,seatNumber));
 
     }
 
-    private ProductPassengerDTO searchPassanger(Scanner scanner) {
+    private PassengerDTO searchPassanger(Scanner scanner) {
         System.out.println("Search passenger");
 
-        ProductPassengerDTO passengerDTO;
+        PassengerDTO passengerDTO;
 
         String id = stringValidation("Enter id flyght", scanner,"\\d+");
         String nif = Metod.stringValidation("Enter NIF passenger (00000000R):", scanner, "\\d{8}[A-HJ-NP-TV-Z]");
@@ -176,10 +178,10 @@ public class Client {
     private void deletePassenger(Scanner scanner) {
         System.out.println("Delete pasanger");
 
-        ProductPassengerDTO passengerDTO = searchPassanger(scanner);
+        PassengerDTO passengerDTO = searchPassanger(scanner);
         if (passengerDTO!=null){
             if(confirmation("Sure delete passager?", scanner)){
-                apiProductPassenger.deletePassengerFromFlight(passengerDTO.getFlightId(),passengerDTO.getNif());
+                apiPassenger.deletePassengerFromFlight(passengerDTO.getFlightId(),passengerDTO.getNif());
             }
         }
     }
@@ -187,60 +189,60 @@ public class Client {
     private void updatePassenger(Scanner scanner) {
         System.out.println("Update data passenger");
 
-        ProductPassengerDTO productPassengerDTO = searchPassanger(scanner);
+        PassengerDTO passengerDTO = searchPassanger(scanner);
 
-        if (productPassengerDTO != null) {
+        if (passengerDTO != null) {
             boolean exit = false;
             do {
-                String flightId = productPassengerDTO.getFlightId();
-                String nif = productPassengerDTO.getNif();
+                String flightId = passengerDTO.getFlightId();
+                String nif = passengerDTO.getNif();
 
                 System.out.println("1.NIF\n2.Flight id\n3.Name\n4.Surname\n5.Email\n6.Seat number\n0.exit");
                 String option = scanner.nextLine();
                 switch (option) {
                     case "1":
                         String newNif = Metod.stringValidation("Enter NIF (00000000R):", scanner, "\\d{8}[A-HJ-NP-TV-Z]");
-                        productPassengerDTO.setNif(newNif);
+                        passengerDTO.setNif(newNif);
                         if (confirmation("Sure to modify the passanger?",scanner)){
-                            updateFact(flightId, nif, productPassengerDTO);
+                            updateFact(flightId, nif, passengerDTO);
                         }
                         break;
                     case "2":
                         String newFlightId = stringValidation("Enter the flight id", scanner, "\\d+");
-                        productPassengerDTO.setFlightId(newFlightId);
+                        passengerDTO.setFlightId(newFlightId);
                         if (confirmation("Sure to modify the passanger?",scanner)){
-                            updateFact(flightId, nif, productPassengerDTO);
+                            updateFact(flightId, nif, passengerDTO);
                         }
                         break;
                     case "3":
                         String newName = stringValidation("Enter name(Antonio):", scanner, "([A-Z][a-z]*)+");
-                        productPassengerDTO.setName(newName);
+                        passengerDTO.setName(newName);
                         if (confirmation("Sure to modify the passanger?",scanner)){
-                            updateFact(flightId, nif, productPassengerDTO);
+                            updateFact(flightId, nif, passengerDTO);
                         }
 
                         break;
                     case "4":
                         String newSurname = stringValidation("Enter surname(Llorente):", scanner, "([A-Z][a-z]*)+");
-                        productPassengerDTO.setSurname(newSurname);
+                        passengerDTO.setSurname(newSurname);
                         if (confirmation("Sure to modify the passenger?",scanner)){
-                            updateFact(flightId, nif, productPassengerDTO);
+                            updateFact(flightId, nif, passengerDTO);
                         }
 
                         break;
                     case "5":
                         String newEmail = stringValidation("Enter e-mail passenger",scanner,"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}");
-                        productPassengerDTO.setEmail(newEmail);
+                        passengerDTO.setEmail(newEmail);
                         if (confirmation("Sure to modify the passenger?",scanner)){
-                            updateFact(flightId, nif, productPassengerDTO);
+                            updateFact(flightId, nif, passengerDTO);
                         }
                         break;
                     case "6":
                         String newSeatNumber = stringValidation("Enter seat number plane",scanner,"\\d+");
                         int nSN = Integer.parseInt(newSeatNumber);
-                        productPassengerDTO.setSeatNumber(nSN);
+                        passengerDTO.setSeatNumber(nSN);
                         if(confirmation("Sure to modify the passenger?",scanner)){
-                            updateFact(flightId, nif, productPassengerDTO);
+                            updateFact(flightId, nif, passengerDTO);
                         }
                         break;
                     case "0":
@@ -257,8 +259,8 @@ public class Client {
     }
 
 
-    private void updateFact(String flyghtId, String nif, ProductPassengerDTO passengerDTO) {
-        apiProductPassenger.updatePassengerInFlight(flyghtId,nif,passengerDTO);
+    private void updateFact(String flyghtId, String nif, PassengerDTO passengerDTO) {
+        apiPassenger.updatePassengerInFlight(flyghtId,nif,passengerDTO);
     }
 
 

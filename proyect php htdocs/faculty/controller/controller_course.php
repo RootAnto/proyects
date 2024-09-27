@@ -54,7 +54,7 @@
                 $message = $success ? "Course successfully created." : "Error creating the course.";
                 
                 // Redirect to the course index page with the message
-                header("Location: ../views/course/course_index.php?message=" . urlencode($message));
+                header("Location: views/course/course_index.php?message=" . urlencode($message));
                 exit();
             }
         }

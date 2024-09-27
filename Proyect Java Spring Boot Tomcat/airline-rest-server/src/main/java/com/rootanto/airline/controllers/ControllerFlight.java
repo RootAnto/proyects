@@ -1,14 +1,13 @@
 package com.rootanto.airline.controllers;
 
+import com.rootanto.airline.dto.FlightDTO;
 import com.rootanto.airline.services.FlightService;
 import jakarta.validation.Valid;
-import com.rootanto.airline.entity.FlightString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.rootanto.airline.entity.Flight;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,24 +26,21 @@ public class ControllerFlight {
 
     // Metodo para introducir vuelos
     @PostMapping("/flight")
-    public ResponseEntity<Object> createFlight(@Valid @RequestBody FlightString flightString) throws ParseException {
+    public ResponseEntity<Object> createFlight(@Valid @RequestBody FlightDTO flight) {
 
         System.out.println("Entering flight information.");
+        System.out.println("origen: " + flight.getOrigin());
+        System.out.println("destino: " + flight.getDestination());
+        System.out.println("fecha: " + flight.getDate());
 
-        //Descompner Requestbody como String porque el parametro date no es serializable.
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = formatter.parse(flightString.getDateString());
-        flightString.setId(String.valueOf(count));
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
-        System.out.println("Antes:"+flightString.getDateString());
-        System.out.println("Despues"+date);
-
-        //Crear nuevo vuelo con los datos de RequestBody
+        // Crear nuevo vuelo con los datos de RequestBody
         boolean created = flightService.addFlight(new Flight(
-                        flightString.getId(),
-                        flightString.getOrigin(),
-                        flightString.getDestination(),
-                        date)
+                        flight.getId(),
+                        flight.getOrigin(),
+                        flight.getDestination(),
+                        flight.getDate())
                 );
         count++;
         if (created) {

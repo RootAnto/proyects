@@ -9,7 +9,7 @@ import lombok.NonNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductFlightDTO {
+public class FlightDTO {
     @NonNull
     private String id;
     @NonNull

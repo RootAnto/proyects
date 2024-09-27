@@ -2,31 +2,31 @@ package com.rootanto.airline.api;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.rootanto.airline.dto.ProductFlightDTO;
+import com.rootanto.airline.dto.FlightDTO;
 
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class ApiProductFlight extends ApiService {
+public class ApiFlight extends ApiService {
     private final String URL = super.URL;
 
-    public ProductFlightDTO findFlightById(String flightId) throws Exception {
+    public FlightDTO findFlightById(String flightId) throws Exception {
         String url = URL + "/flight/{flightId}";
         url = url.replace("{flightId}", flightId);
         System.out.println(flightId);
         String body = connection.doGet(url);
         Gson gson = new Gson();
-        return gson.fromJson(body, ProductFlightDTO.class);
+        return gson.fromJson(body, FlightDTO.class);
     }
 
-    public List<ProductFlightDTO> showAllFlight(String origin, String destination) throws Exception {
+    public List<FlightDTO> showAllFlight(String origin, String destination) throws Exception {
         String endpoint = URL + "/flight?origin=" + origin + "&destination=" + destination;
         String response = connection.doGet(endpoint);
-        Type listType = new TypeToken<List<ProductFlightDTO>>(){}.getType();
+        Type listType = new TypeToken<List<FlightDTO>>(){}.getType();
         return new Gson().fromJson(response, listType);
     }
 
-    public void create(ProductFlightDTO flightDTO){
+    public void create(FlightDTO flightDTO){
         try {
             Gson gson = new Gson();
             String body = gson.toJson(flightDTO);

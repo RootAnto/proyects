@@ -1,17 +1,17 @@
 package com.rootanto.airline.Service;
 
-import com.rootanto.airline.api.ApiProductPassenger;
-import com.rootanto.airline.dto.ProductPassengerDTO;
+import com.rootanto.airline.api.ApiPassenger;
+import com.rootanto.airline.dto.PassengerDTO;
 
 import java.util.List;
 
 public class PasangerService {
 
-    private final ApiProductPassenger apiProductPassenger = new ApiProductPassenger();
-    public ProductPassengerDTO getPassenger(String nif, String id) {
+    private final ApiPassenger apiPassenger = new ApiPassenger();
+    public PassengerDTO getPassenger(String nif, String id) {
         try {
             System.out.println("Searching for passenger by NIF: " + nif + " with flight id " + id);
-            ProductPassengerDTO passenger = apiProductPassenger.getPassengerInFlight(nif, id);
+            PassengerDTO passenger = apiPassenger.getPassengerInFlight(nif, id);
 
             if (passenger != null) {
                 System.out.println("NIF: " + passenger.getNif());
@@ -34,9 +34,9 @@ public class PasangerService {
     public void getAllPassenger(String idVuelo)  {
         try {
             System.out.println("Watch all passengers");
-            List<ProductPassengerDTO> productPassengerList = apiProductPassenger.getAllPassengers(idVuelo);
+            List<PassengerDTO> productPassengerList = apiPassenger.getAllPassengers(idVuelo);
             System.out.println("Passengers found:");
-            for (ProductPassengerDTO passenger : productPassengerList) {
+            for (PassengerDTO passenger : productPassengerList) {
                 System.out.println("Passenger:");
                 System.out.println("NIF: " + passenger.getNif());
                 System.out.println("Flight ID: " + passenger.getFlightId());

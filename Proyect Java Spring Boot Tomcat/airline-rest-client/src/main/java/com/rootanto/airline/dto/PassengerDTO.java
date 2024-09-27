@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductPassengerDTO {
+public class PassengerDTO {
     private String nif;
     private String flightId;
     private String name;

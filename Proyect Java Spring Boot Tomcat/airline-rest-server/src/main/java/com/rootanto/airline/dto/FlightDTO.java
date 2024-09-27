@@ -1,8 +1,13 @@
 package com.rootanto.airline.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
 /**
@@ -12,6 +17,9 @@ import java.util.Date;
  * Lombok's @Data annotation generates boilerplate code such as getters, setters, toString(), equals(), and hashCode() methods.
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class FlightDTO {
 
     /**
@@ -68,7 +76,7 @@ public class FlightDTO {
      * - Invalid: "2024/01/01", "01-01-2024", "01/01/24", ""
      */
     @NotEmpty(message = "The field date cannot be empty")
-    @Pattern(regexp = "^\\d{2}/\\d{2}/\\d{4}$", message = "The date must be in the format dd/MM/yyyy")
+    @Future
     private Date date;
 
 }

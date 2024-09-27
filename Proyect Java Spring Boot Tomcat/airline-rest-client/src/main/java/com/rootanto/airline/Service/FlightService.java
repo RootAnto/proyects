@@ -1,18 +1,18 @@
 package com.rootanto.airline.Service;
-import com.rootanto.airline.dto.ProductFlightDTO;
-import com.rootanto.airline.api.ApiProductFlight;
+import com.rootanto.airline.dto.FlightDTO;
+import com.rootanto.airline.api.ApiFlight;
 import com.rootanto.airline.execption.NotFoundException;
 import java.util.List;
 
 public class FlightService {
-    private final ApiProductFlight apiProductFlight = new ApiProductFlight();
+    private final ApiFlight apiFlight = new ApiFlight();
 
     public void findAllFlight(String origin, String destination)  {
         try {
             System.out.println("Searching for flights with origin: " + origin + " and destination: " + destination);
-            List<ProductFlightDTO> productFlightDTOList = apiProductFlight.showAllFlight(origin, destination);
+            List<FlightDTO> productFlightDTOList = apiFlight.showAllFlight(origin, destination);
             System.out.println("Flights found:");
-            for (ProductFlightDTO flight : productFlightDTOList) {
+            for (FlightDTO flight : productFlightDTOList) {
                 System.out.println("ID: " + flight.getId());
                 System.out.println("Origin: " + flight.getOrigin());
                 System.out.println("Destination: " + flight.getDestination());
@@ -28,7 +28,7 @@ public class FlightService {
     public void findFlightById(String id){
         try{
             System.out.println("Searching for flights with ID: " + id);
-            ProductFlightDTO flight = apiProductFlight.findFlightById(id);
+            FlightDTO flight = apiFlight.findFlightById(id);
 
             System.out.println("ID: " + flight.getId());
             System.out.println("Origin: " + flight.getOrigin());
