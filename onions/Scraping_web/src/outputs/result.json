@@ -1,0 +1,171 @@
+[
+  {
+    "url": "https://www.industrialdataworks.com/",
+    "title": "ICS Vulnerability API",
+    "h1": [
+      "ICS Vulnerability Data API"
+    ],
+    "h2": [],
+    "h3": [],
+    "h4": [],
+    "h5": [],
+    "h6": [],
+    "p": [
+      "Subscribe",
+      "See Pricing & Options",
+      "Download ICS Advisory Project and Industrial Data Works ICS Vulnerabilities Research Report for 2023",
+      "16 Critical Infrastructure Sectors",
+      "Chemical Sector",
+      "Commercial Facilities Sector",
+      "Communications Sector",
+      "Critical Manufacturing Sector",
+      "Dams Sector",
+      "Defense Industrial Base Sector",
+      "Emergency Services Sector",
+      "Energy Sector",
+      "Financial Services Sector",
+      "Food and Agriculture Sector",
+      "Government Facilities Sector",
+      "Healthcare and Public Health Sector",
+      "Information Technology Sector",
+      "Nuclear Reactors, Materials, and Waste Sector",
+      "Transportation Systems Sector",
+      "Water and Wastewater Systems Sector",
+      "About Industrial Data Works",
+      "Industrial Data Works is a company that specializes in providing a comprehensive range of services related to industrial control systems (ICS) vulnerability intelligence data. One of their key offerings is the provision of an application programming interface (API) for the ICS Advisory Project (ICS[AP]) data, allowing seamless integration with service provider ICS Security Platforms and corporate customer data visualization applications.",
+      "In addition to their API services, Industrial Data Works offers consulting services to help organizations optimize their ICS security and operational efficiency. These services include Network Vulnerability & Threat Analysis Development, where they analyze network vulnerabilities and threats to identify potential risks. They also provide Network Architecture Reviews & Recommendations, assisting clients in enhancing their network infrastructure for better performance and security.",
+      "Furthermore, Industrial Data Works conducts Asset Inventory Analysis, which involves assessing and documenting the assets within an industrial system, helping organizations gain a comprehensive understanding of their resources. They also offer Vulnerability Analysis and Patch Management Strategy Development, assisting clients in identifying vulnerabilities within their systems and developing effective strategies to manage and patch them.",
+      "Overall, Industrial Data Works aims to provide comprehensive solutions and expertise to support organizations in optimizing their industrial control systems security, efficiency, and integration capabilities.",
+      "Products",
+      "Services",
+      "About",
+      "Contact",
+      "Privacy PolicyTerms of Service",
+      "COPYRIGHT © 2025 INDUSTRIAL DATA WORKS, LLC. ALL RIGHTS RESERVED.For information about how we collect, use, share or otherwise process information about you, please see our privacy policy."
+    ]
+  },
+  {
+    "url": "https://yurisk.info/2020/08/08/fortigate-using-external-threat-feeds-and-ip-domain-block-lists/",
+    "title": "Using external threat feeds in FortiGate has become much easier with 6.0 and 6.2 versions – Yuri Slobodyanyuk's blog on IT Security and Networking",
+    "h1": [
+      "Using external threat feeds in FortiGate has become much easier with 6.0 and 6.2 versions"
+    ],
+    "h2": [],
+    "h3": [
+      "Resources"
+    ],
+    "h4": [],
+    "h5": [],
+    "h6": [],
+    "p": [
+      "Recently I had the opportunity to configure an external threat feed as a block list for the Fortigate and was pleasantly surprised by how  much simpler it has become. \nTask at hand: Block incoming connections sourced from IP addresses supplied as a list by a 3rd party commercial Threat Intelligence feed.",
+      "Until FortiOS 6.0.1 we had to resort to custom scripting which downloaded those block lists, then parsed and compiled Fortigate CLI commands to add them as address objects, circumventing limitations by grouping addresses into Address Groups. In short,  it was doable but painful. But no more - starting with FortiOS 6.0.1 we have a Fabric Connector for the IP address/domains block lists which we can use in DNS Filtering (6.0.1 and newer) and also as regular Address objects in Source/Destination fields of Security Rules (starting with 6.2 and newer).",
+      "So let's see how to do it. For this post I will be using free \"Bogons List\" by Cymru Team as in the original case I was using commercial and confidential one which cannot be disclosed here. The idea is identical - the feed provider gives (usually) HTTP/HTTPS link to download IP block list. The list has to have IP address/network or domain per line and it must be readable as a plain text. Example:",
+      "The FortiOS used here is 6.2.3. We start by creating new Fabric Connector:",
+      ".  In which we specify URL to download the block list, with optional Basic HTTP Authentication. It should look like this:",
+      "Upon saving, give it few minutes for the Fortigate to fetch the URL. When it is ready, the arrow will change from red to green:",
+      "Once the Fabric Connector is synchronized with the feed, we can edit it to verify IPs/domains it downloaded:",
+      "What is left is to use this feed object in Security rule. Here I will create a new rule above the rule allowing HTTP/HTTPS access to the website with the action of Deny:",
+      "Key takeaway today - keep abreast of new major and minor FortiOS releases, as any update may introduce new feature that will make your life as Network/Security admin much easier.",
+      "Did you like this article? Share it with your friends!"
+    ]
+  },
+  {
+    "url": "https://claroty.com/blog/ics-scada-vulnerability-management-proactive-strategies-for-cyber-resilience",
+    "title": "ICS/SCADA Vulnerability Management: Proactive Strategies for Cyber Resilience | Claroty",
+    "h1": [
+      "ICS/SCADA Vulnerability Management: Proactive Strategies for Cyber Resilience"
+    ],
+    "h2": [
+      "Barriers to Successful ICS/SCADA Vulnerability Management",
+      "ICS/SCADA Vulnerability Management Strategies"
+    ],
+    "h3": [],
+    "h4": [
+      "Claroty Named a Leader in 2025 Gartner® Magic Quadrant™ for CPS Protection Platforms",
+      "Claroty Wins Best in KLAS for Healthcare IoT Security - Five Years in a Row",
+      "State of CPS Security: OT Exposures 2025",
+      "Financial Impacts of Securing CPS Operations",
+      "Now Introducing Claroty xDome for Healthcare",
+      "Phlow Leverages Claroty Technologies for Unparalleled Cyber-Physical System Protection",
+      "Related Articles"
+    ],
+    "h5": [],
+    "h6": [],
+    "p": [
+      "Digital connectivity within Industrial Control Systems (ICS) and Supervisory Control and Data Acquisition (SCADA) systems has dramatically reshaped the vulnerability and threat landscape. This level of connectivity has made it apparent that traditional vulnerability management strategies and risk reduction workflows are neither practical nor sufficient. As a result, security teams must depart from conventional IT methods and employ comprehensive, environment-aware strategies for identifying, assessing, and contextualizing vulnerabilities.",
+      "Vulnerabilities affecting ICS and SCADA systems are increasingly difficult to manage both efficiently and effectively. This is due to the following challenges:",
+      "Asset Visibility Blindspots:ICS and SCADA systems many times use proprietary protocols that render them nearly invisible totraditional IT tools. Without visibility into these assets, organizations can experience significant context gaps that hinder prioritization and remediation decisions. Therefore, it is essential to not only have comprehensive discovery details of an asset, but also its system context regarding communications, architecture, and production dependencies.",
+      "Vulnerability Prioritization Challenges:Traditionally, organizations have utilized theCommon Vulnerability Scoring System (CVSS)as the primary means for assessing risk. CVSS scores are commonly used to calculate the severity of vulnerabilities discovered in one’s environment, and as a factor in prioritization of vulnerability remediation activities. Although this is one of the most-used tools for assessing risk, CVSS is not a measure of risk and therefore can be misused in the way that security teams interpret and apply scores.",
+      "According to Claroty’sTeam82 State of the XIoT Report, nearly 70% of vulnerabilities disclosed in 2022 received a CVSS v3 severity score of “high” or “critical,” yet less than 8% have been exploited. This discrepancy raises concerns about the conventional wisdom and solutions that recommend prioritizing remediation based on CVSS scores.",
+      "Standard Solutions Fall Short:ICS and SCADA systems are uniquely fragile and cannot tolerate the traffic generated by standard vulnerability scanners. If used, they can disrupt operations or disable them completely.",
+      "Additionally, the same solutions and guidelines that recommend prioritizing vulnerabilities based on CVSS v3 severity also typically recommend mitigating them through means that are often impossible in ICS/SCADA environments: patching. Patching any vulnerability typically requires downtime, which most OT environments cannot tolerate due to the processes they underpin. Therefore, maintenance windows occur rarely, no matter the vulnerability or risk.",
+      "Due to the complexity and challenges we’ve listed above,OT vulnerability managementcan be difficult to achieve without the proper strategies in place. Critical infrastructure organizations should align with the following best practices to ensure they are prepared to tackle vulnerability management in their unique environments:",
+      "Asset Discovery:Without full-spectrum asset visibility, effective ICS andSCADA cybersecuritycontrols — including vulnerability management — are impossible to implement. Asset discovery details, such as asset type, model, device manufacturer, IP address, and device location are critical in order to effectively prioritize and manage vulnerabilities. Without this information, risk management tools cannot accurately map vulnerabilities or attribute risk factors to specific assets or, going a step further, group assets by criticality and priority. By utilizing an OT security tool with multiple, highly flexible discovery methods organizations can gain full visibility in the manner best suited to their distinct needs.",
+      "Vulnerability Identification:Since standard solutions and conventional wisdom guide vulnerability prioritization based on CVSS v3 severity scores — not based on exploit likelihood — it has become commonplace for the often-already overburdened personnel responsible for managing ICS/SCADA vulnerabilities to expend resources prioritizing those that are or will not ever be exploited. To prevent resources from being wasted, organizations should implement a solution that makes it easy to focus on the vulnerabilities that are, or most likely will be, exploited based on the latest current and predicted exploitability indicators.",
+      "Vulnerability Prioritization:Next, it is important for organizations to prioritize the most important vulnerabilities in their ICS/SCADA environment based on which ones are (or are most likely to be) actively exploited. An advanced vulnerability management solution will not only provide severity scoring on vulnerabilities, but also take the guesswork out of risk prioritization by grouping both vulnerabilities and their affected devices based on likelihood of exploitability and asset criticality.",
+      "Mature and Scale Workflows:As a best practice, it is important to use dedicated OT workflows or existing IT ticketing orchestration, and/or related tools to mature your ICS/SCADA vulnerability management tactics to scalable workflows. With the help of an advanced OT cybersecurity platform, organizations can easily extend existing IT vulnerability management workflows to their OT environment by integrating seamlessly with CMDB, orchestration, ticketing, SIEM, and related sources.",
+      "Optimize Risk Posture:In an optimized risk management program, organizations are able to leverage strategic ICS/SCADA insights and risk recommendations to drive proactive mitigations — and, if desired, extend any existing IT endpoint security solutions to compatible devices in OT — to further strengthen their risk posture. To further optimize their risk posture, organizations can measure their risk program against the following factors:",
+      "a.They can accurately match exact assets with known CVEs based on vendor, model, and firmware version.",
+      "b.They are able to identify and analyze known risks to calculate the most likely scenario an attacker could compromise the network.",
+      "c.They can evaluate and score vulnerabilities based on the unique risk they pose to their network.",
+      "As digital connectivity grows and new barriers to successful exposure management arise, it is important for organizations to consider the above strategies when building out theirexposure managementprogram. They must understand that every CPS environment is unique, and demands a tailored approach. Once this approach is implemented successfully, organizations will be better equipped to understand their risk posture, prioritize the vulnerabilities that matter most, and apply mitigations that are carefully informed, safe, and truly impactful at reducing risk in their CPS environment.",
+      "A Comprehensive Guide to Medical Device Vulnerability Management",
+      "The Ultimate Guide to OT Vulnerability Management",
+      "Explained: The Exploit Prediction Scoring System (EPSS)",
+      "Interested in learning about Claroty's Cybersecurity Solutions?",
+      "© 2025 Claroty. All rights reserved."
+    ]
+  },
+  {
+    "url": "https://www.thecre.com/fisma/?p=1388",
+    "title": "The danger of SCADA vulnerability exposure  » The FISMA Focus IPD",
+    "h1": [
+      "The FISMA Focus IPD"
+    ],
+    "h2": [
+      "The danger of SCADA vulnerability exposure",
+      "Discussion Forums",
+      "Important Sites",
+      "News Links",
+      "Archives"
+    ],
+    "h3": [
+      "Leave a ReplyCancel reply"
+    ],
+    "h4": [],
+    "h5": [],
+    "h6": [],
+    "p": [
+      "From: Government Security News",
+      "Let’s face it — Active Supervisory Control and Data Acquisition (SCADA) attacks are going on right now against critical infrastructure. And the cyber security protection in place to protect it is so minimal that it is quite feasible for cyber criminals to cause chaos.",
+      "It is well documented that critical infrastructure is vulnerable to attack and, although the effects of some of them have been publicized, the general concern is that it is a matter of time until one or more major attacks occur.",
+      "The Stuxnet worm acted as a catalyst, but most of us knew this was impending. Now that some of the first documented breaches are on record, let’s hope critical infrastructure providers and government agencies alike will take meaningful action to ensure critical infrastructure security and civilian safety.",
+      "“Government agencies, in particular the Department of Defense (DoD), Department of Homeland Security (DHS) and many civilian government contract agencies, have a serious problem,” states Greg McDermott, director of federal operations at Mu Dynamics, Inc. “The challenge is that SCADA systems that control critical infrastructure, such as nuclear power plants, electrical power transmission systems and water treatment plants, are increasingly connected to IP networks. The result is a dramatic increase in their exposure to attacks.”",
+      "In short, we have a huge need to ensure that SCADA developers and the service providers who are deploying these industrial control systems focus on mitigating the risk of cyber security attacks.",
+      "The critical infrastructure challenge",
+      "Adversaries are targeting vulnerabilities in SCADA systems with increasing frequency and sophistication. Not only are manuals on how SCADA systems operate rampant and publicly available for use by cyber criminals, but many of the control systems are connected to other networks that are not secure, thus dramatically increasing the risk to homeland security and civilian attack.",
+      "SCADA represents a move in the right direction. In spite of its critical nature, though, it is well known that limited Information Assurance (IA) policies for managing vulnerabilities associated with these systems are available. Moreover, specific Certification and Accreditation (C&A) guidance for these limited IA policies are in place.",
+      "As a result, the availability, integrity and confidentiality for SCADA systems is recognized as critical, yet often overlooked.",
+      "This begs the questions: Why hasn’t guidance been put in place to validate that SCADA systems are aligned with traditional information assurance best practices? And why is government reliance on limited IA policies, even certification in such policies, when the use of best practices in securing IP networks and leveraging technology to do so are readily available and frequently used in civilian enterprises?",
+      "New methodologies required",
+      "Simply put, a methodology capable of identifying vulnerabilities in an accurate and efficient way has not previously been available. In addition, the capability to do conformance testing of applicable IA policies is relatively new.",
+      "Key guidelines for SCADA network administrators and developers include:",
+      "As government agencies move to more application-aware network infrastructure, and SCADA systems move out of “special purpose” roles and into the open corporate infrastructure, it is imperative that government organizations and their contractors develop in-depth testing and assessment programs that can identify and secure application and infrastructure vulnerabilities before they are exploited by cyber criminals and organizations.",
+      "Tom Parker, the CTO of FusionX, said, “As a leading security consulting services company who has worked in every critical infrastructure-related sector, the availability of in-depth testing and assessment technologies that enhance our capabilities to provide more accurate testing and in-depth analysis are critical to the success of our operation.”",
+      "Conclusion",
+      "Given the increasingly open SCADA networks, security risks leave them vulnerable to service disruptions and outages that could result in public safety hazards, as well as causing havoc to the nation’s critical infrastructure.",
+      "Government agencies, contractors and SCADA suppliers must continue to invest in defensive security measures to mitigate the risk of cyber attack. Implementing a multi-pronged strategy is required to systematically improve security, using a combination of people, process and tools.",
+      "Dave Kresse is CEO of Mu Dynamics, Inc.",
+      "Your email address will not be published.",
+      "Comment",
+      "Name",
+      "Email",
+      "Website",
+      "Please Answer:*+8=13",
+      "",
+      "",
+      ""
+    ]
+  }
+]

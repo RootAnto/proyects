@@ -1,0 +1,562 @@
+[
+    {
+        "text": "Until FortiOS 6.0.1 we had to resort to custom scripting which downloaded those block lists, then parsed and compiled Fortigate CLI commands to add them as address objects, circumventing limitations by grouping addresses into Address Groups. In short,  it was doable but painful. But no more - starting with FortiOS 6.0.1 we have a Fabric Connector for the IP address/domains block lists which we can use in DNS Filtering (6.0.1 and newer) and also as regular Address objects in Source/Destination fields of Security Rules (starting with 6.2 and newer).",
+        "language": "en",
+        "tags": [
+            [
+                "FortiOS 6.0.1",
+                "ORG"
+            ],
+            [
+                "Fortigate CLI",
+                "ORG"
+            ],
+            [
+                "Address Groups",
+                "PERSON"
+            ],
+            [
+                "FortiOS 6.0.1",
+                "ORG"
+            ],
+            [
+                "IP",
+                "ORG"
+            ],
+            [
+                "DNS Filtering",
+                "ORG"
+            ],
+            [
+                "6.0.1",
+                "CARDINAL"
+            ],
+            [
+                "Address",
+                "ORG"
+            ],
+            [
+                "Source/Destination",
+                "ORG"
+            ],
+            [
+                "Security Rules",
+                "ORG"
+            ],
+            [
+                "6.2",
+                "CARDINAL"
+            ]
+        ],
+        "relevance": 11
+    },
+    {
+        "text": "Industrial Data Works is a company that specializes in providing a comprehensive range of services related to industrial control systems (ICS) vulnerability intelligence data. One of their key offerings is the provision of an application programming interface (API) for the ICS Advisory Project (ICS[AP]) data, allowing seamless integration with service provider ICS Security Platforms and corporate customer data visualization applications.",
+        "language": "en",
+        "tags": [
+            [
+                "Industrial Data Works",
+                "ORG"
+            ],
+            [
+                "ICS",
+                "ORG"
+            ],
+            [
+                "One",
+                "CARDINAL"
+            ],
+            [
+                "API",
+                "ORG"
+            ],
+            [
+                "the ICS Advisory Project",
+                "ORG"
+            ],
+            [
+                "ICS Security Platforms",
+                "ORG"
+            ]
+        ],
+        "relevance": 6
+    },
+    {
+        "text": "In addition to their API services, Industrial Data Works offers consulting services to help organizations optimize their ICS security and operational efficiency. These services include Network Vulnerability & Threat Analysis Development, where they analyze network vulnerabilities and threats to identify potential risks. They also provide Network Architecture Reviews & Recommendations, assisting clients in enhancing their network infrastructure for better performance and security.",
+        "language": "en",
+        "tags": [
+            [
+                "API",
+                "ORG"
+            ],
+            [
+                "Industrial Data Works",
+                "ORG"
+            ],
+            [
+                "ICS",
+                "ORG"
+            ],
+            [
+                "Network Vulnerability & Threat Analysis Development",
+                "ORG"
+            ],
+            [
+                "Network Architecture Reviews & Recommendations",
+                "ORG"
+            ]
+        ],
+        "relevance": 5
+    },
+    {
+        "text": "Using external threat feeds in FortiGate has become much easier with 6.0 and 6.2 versions – Yuri Slobodyanyuk's blog on IT Security and Networking",
+        "language": "en",
+        "tags": [
+            [
+                "FortiGate",
+                "ORG"
+            ],
+            [
+                "6.0",
+                "CARDINAL"
+            ],
+            [
+                "6.2",
+                "CARDINAL"
+            ],
+            [
+                "Yuri Slobodyanyuk's",
+                "PERSON"
+            ]
+        ],
+        "relevance": 4
+    },
+    {
+        "text": "Download ICS Advisory Project and Industrial Data Works ICS Vulnerabilities Research Report for 2023",
+        "language": "en",
+        "tags": [
+            [
+                "Download ICS Advisory Project",
+                "ORG"
+            ],
+            [
+                "Industrial Data Works ICS Vulnerabilities Research Report",
+                "ORG"
+            ],
+            [
+                "2023",
+                "DATE"
+            ]
+        ],
+        "relevance": 3
+    },
+    {
+        "text": "Furthermore, Industrial Data Works conducts Asset Inventory Analysis, which involves assessing and documenting the assets within an industrial system, helping organizations gain a comprehensive understanding of their resources. They also offer Vulnerability Analysis and Patch Management Strategy Development, assisting clients in identifying vulnerabilities within their systems and developing effective strategies to manage and patch them.",
+        "language": "en",
+        "tags": [
+            [
+                "Industrial Data Works",
+                "ORG"
+            ],
+            [
+                "Vulnerability Analysis",
+                "ORG"
+            ],
+            [
+                "Patch Management Strategy Development",
+                "ORG"
+            ]
+        ],
+        "relevance": 3
+    },
+    {
+        "text": "COPYRIGHT © 2025 INDUSTRIAL DATA WORKS, LLC. ALL RIGHTS RESERVED.For information about how we collect, use, share or otherwise process information about you, please see our privacy policy.",
+        "language": "en",
+        "tags": [
+            [
+                "2025",
+                "DATE"
+            ],
+            [
+                "INDUSTRIAL DATA WORKS",
+                "ORG"
+            ],
+            [
+                "LLC",
+                "ORG"
+            ]
+        ],
+        "relevance": 3
+    },
+    {
+        "text": "Using external threat feeds in FortiGate has become much easier with 6.0 and 6.2 versions",
+        "language": "en",
+        "tags": [
+            [
+                "FortiGate",
+                "ORG"
+            ],
+            [
+                "6.0",
+                "CARDINAL"
+            ],
+            [
+                "6.2",
+                "CARDINAL"
+            ]
+        ],
+        "relevance": 3
+    },
+    {
+        "text": "Recently I had the opportunity to configure an external threat feed as a block list for the Fortigate and was pleasantly surprised by how  much simpler it has become. \nTask at hand: Block incoming connections sourced from IP addresses supplied as a list by a 3rd party commercial Threat Intelligence feed.",
+        "language": "en",
+        "tags": [
+            [
+                "Task",
+                "PRODUCT"
+            ],
+            [
+                "IP",
+                "ORG"
+            ],
+            [
+                "3rd",
+                "ORDINAL"
+            ]
+        ],
+        "relevance": 3
+    },
+    {
+        "text": "Key takeaway today - keep abreast of new major and minor FortiOS releases, as any update may introduce new feature that will make your life as Network/Security admin much easier.",
+        "language": "en",
+        "tags": [
+            [
+                "today",
+                "DATE"
+            ],
+            [
+                "FortiOS",
+                "ORG"
+            ],
+            [
+                "Network/Security",
+                "ORG"
+            ]
+        ],
+        "relevance": 3
+    },
+    {
+        "text": "So let's see how to do it. For this post I will be using free \"Bogons List\" by Cymru Team as in the original case I was using commercial and confidential one which cannot be disclosed here. The idea is identical - the feed provider gives (usually) HTTP/HTTPS link to download IP block list. The list has to have IP address/network or domain per line and it must be readable as a plain text. Example:",
+        "language": "en",
+        "tags": [
+            [
+                "IP",
+                "ORG"
+            ],
+            [
+                "IP",
+                "ORG"
+            ]
+        ],
+        "relevance": 2
+    },
+    {
+        "text": "The FortiOS used here is 6.2.3. We start by creating new Fabric Connector:",
+        "language": "en",
+        "tags": [
+            [
+                "6.2.3",
+                "DATE"
+            ],
+            [
+                "Fabric",
+                "ORG"
+            ]
+        ],
+        "relevance": 2
+    },
+    {
+        "text": "ICS Vulnerability API",
+        "language": "tl",
+        "tags": [
+            [
+                "ICS Vulnerability",
+                "MISC"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "ICS Vulnerability Data API",
+        "language": "tl",
+        "tags": [
+            [
+                "Vulnerability Data",
+                "PER"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "See Pricing & Options",
+        "language": "en",
+        "tags": [
+            [
+                "See Pricing & Options",
+                "ORG"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "16 Critical Infrastructure Sectors",
+        "language": "ro",
+        "tags": [
+            [
+                "Critical Infrastructure Sectors",
+                "ORG"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "Chemical Sector",
+        "language": "en",
+        "tags": [
+            [
+                "Chemical",
+                "ORG"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "Financial Services Sector",
+        "language": "es",
+        "tags": [
+            [
+                "Financial Services Sector",
+                "MISC"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "Healthcare and Public Health Sector",
+        "language": "en",
+        "tags": [
+            [
+                "Healthcare",
+                "ORG"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "Transportation Systems Sector",
+        "language": "en",
+        "tags": [
+            [
+                "Transportation Systems",
+                "ORG"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "About Industrial Data Works",
+        "language": "en",
+        "tags": [
+            [
+                "Industrial Data Works",
+                "ORG"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "Overall, Industrial Data Works aims to provide comprehensive solutions and expertise to support organizations in optimizing their industrial control systems security, efficiency, and integration capabilities.",
+        "language": "en",
+        "tags": [
+            [
+                "Industrial Data Works",
+                "ORG"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "Contact",
+        "language": "es",
+        "tags": [
+            [
+                "Contact",
+                "LOC"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "Privacy PolicyTerms of Service",
+        "language": "en",
+        "tags": [
+            [
+                "Privacy PolicyTerms of Service",
+                "ORG"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "Resources",
+        "language": "fr",
+        "tags": [
+            [
+                "Resources",
+                "MISC"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": ".  In which we specify URL to download the block list, with optional Basic HTTP Authentication. It should look like this:",
+        "language": "en",
+        "tags": [
+            [
+                "Basic HTTP Authentication",
+                "ORG"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "Once the Fabric Connector is synchronized with the feed, we can edit it to verify IPs/domains it downloaded:",
+        "language": "en",
+        "tags": [
+            [
+                "the Fabric Connector",
+                "ORG"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "What is left is to use this feed object in Security rule. Here I will create a new rule above the rule allowing HTTP/HTTPS access to the website with the action of Deny:",
+        "language": "en",
+        "tags": [
+            [
+                "Security",
+                "NORP"
+            ]
+        ],
+        "relevance": 1
+    },
+    {
+        "text": "Subscribe",
+        "language": "ro",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Commercial Facilities Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Communications Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Critical Manufacturing Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Dams Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Defense Industrial Base Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Emergency Services Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Energy Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Food and Agriculture Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Government Facilities Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Information Technology Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Nuclear Reactors, Materials, and Waste Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Water and Wastewater Systems Sector",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Products",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Services",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "About",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Upon saving, give it few minutes for the Fortigate to fetch the URL. When it is ready, the arrow will change from red to green:",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    },
+    {
+        "text": "Did you like this article? Share it with your friends!",
+        "language": "en",
+        "tags": [],
+        "relevance": 0
+    }
+]
