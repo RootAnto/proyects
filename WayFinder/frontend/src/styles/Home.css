@@ -1,0 +1,706 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+
+  body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Header */
+  .header {
+    background-color: #003580;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+  }
+
+  .nav-link:hover {
+    opacity: 0.8;
+  }
+
+  .login-btn, .register-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    background: white;
+    border: 1px solid white;
+    color: #003580;
+  }
+
+  .login-btn:hover, .register-btn:hover {
+    opacity: 0.9;
+  }
+
+  /* Estilos para el header cuando hay usuario */
+  .user-welcome {
+    margin-right: 15px;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Menú de usuario desplegable */
+  .user-menu-container {
+    position: relative;
+  }
+
+  .user-menu-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+
+  .user-menu-trigger:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #0071c2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  .dropdown-arrow {
+    font-size: 10px;
+    transition: transform 0.3s;
+    margin-left: 5px;
+  }
+
+  .dropdown-arrow.open {
+    transform: rotate(180deg);
+  }
+
+  .user-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    min-width: 180px;
+    z-index: 100;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .user-dropdown a {
+    text-decoration: none;
+    display: block;
+  }
+
+
+  .logout-btn, .perfil  {
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    color: #003580;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+  }
+
+  .logout-btn:hover, .perfil:hover {
+    background-color: #f0f0f0;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Cerrar menú al hacer clic fuera */
+  body.user-menu-open {
+    overflow: hidden;
+  }
+
+  /* Main content */
+  .main-content {
+    flex: 1;
+    padding: 30px 0;
+  }
+  /* Formulario de búsqueda */
+  .search-form {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .form-group {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .checkbox-group input {
+    width: auto;
+  }
+
+  .checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+
+  .search-button, .suggest-button, .my-bookings-button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .search-button:hover, .suggest-button:hover {
+    background-color: #e64a19;
+  }
+
+  /* Sección de opciones */
+  .options-section {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .option-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .option-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Línea divisoria */
+  .divider {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+  }
+
+  .chatbot-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #0071c2;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+
+  .chatbot-button:hover {
+    background-color: #005999;
+  }
+
+  .chatbot-window {
+    position: fixed;
+    bottom: 95px;
+    right: 25px;
+    width: 320px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+
+  .chatbot-header {
+    background-color: #003580;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .chatbot-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .chatbot-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .chatbot-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    font-size: 14px;
+  }
+
+  .chatbot-input {
+    display: flex;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fafafa;
+  }
+
+  .chatbot-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+  }
+
+  .chatbot-input button {
+    margin-left: 10px;
+    background-color: #0071c2;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+
+  .chatbot-input button:hover {
+    background-color: #005999;
+  }
+
+  /* Footer */
+  .footer {
+    background-color: #003580;
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: auto;
+  }
+
+  .footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 30px;
+  }
+
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+  }
+
+  .footer-column li {
+    margin-bottom: 10px;
+  }
+
+  .footer-column a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-column a:hover {
+    color: white;
+  }
+
+  .newsletter-form {
+    display: flex;
+    margin: 15px 0;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .newsletter-form button {
+    padding: 10px 15px;
+    background-color: #0071c2;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+  }
+
+  .social-links a {
+    color: white;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ddd;
+    font-size: 14px;
+  }
+
+
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 6px solid #ccc;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ff4d4f;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.toast button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Añadir estas reglas al final del archivo CSS */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-group {
+    min-width: 100%;
+  }
+
+  .checkbox-group {
+    margin-top: 5px;
+  }
+
+  .search-button, .suggest-button, .my-bookings-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .options-section {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .chatbot-window {
+    width: 280px;
+    height: 350px;
+  }
+    .chatbot-window {
+    width: 300px;
+    height: 380px;
+    bottom: 85px;
+    right: 20px;
+  }
+
+  .chatbot-button {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+}
+
+/* Móvil (hasta 767px) */
+@media (max-width: 767px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .search-form {
+    padding: 15px;
+  }
+
+  .form-row {
+    margin-bottom: 10px;
+  }
+
+  input, select {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .options-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .option-link {
+    font-size: 14px;
+  }
+
+  .chatbot-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .chatbot-window {
+    width: 55%;
+    right: 5%;
+    bottom: 80px;
+    height: 35vh;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  /* Ajustes para botones en móvil */
+  .search-button, .suggest-button, .my-bookings-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Ajustar el formulario de búsqueda */
+  .form-group {
+    margin-bottom: 8px;
+  }
+
+  /* Ajustar el header */
+  .header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+    .chatbot-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Pequeños móviles (hasta 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .search-form {
+    padding: 10px;
+  }
+
+  .chatbot-window {
+    height: 50vh;
+  }
+
+  .toast {
+    width: 90%;
+    left: 5%;
+    right: auto;
+    text-align: center;
+  }
+    .chatbot-button {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .chatbot-window {
+    width: 80%;
+    right: 15px;
+    bottom: 70px;
+    height: 45vh;
+  }
+
+  .chatbot-header {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,271 @@
+/* Variables de color */
+:root {
+  --primary: #003580;
+  --primary-light: #0071c2;
+  --secondary: #ff5722;
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef;
+  --dark-gray: #495057;
+  --text-color: #212529;
+  --error-color: #dc3545;
+  --success-color: #28a745;
+}
+
+/* Estructura principal */
+.register-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--light-gray);
+}
+
+.register-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 1rem;
+}
+
+.register-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  margin: 1rem;
+}
+
+/* Títulos y texto */
+.register-title {
+  font-size: 1.75rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.register-error {
+  color: var(--error-color);
+  background-color: rgba(220, 53, 69, 0.1);
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Formulario */
+.register-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.register-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--dark-gray);
+  font-size: 0.95rem;
+}
+
+.register-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.register-input:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(0, 113, 194, 0.2);
+  outline: none;
+}
+
+/* Campos de nombre */
+.register-name-fields {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.register-name-fields .register-form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Términos y condiciones */
+.register-terms {
+  display: flex;
+  align-items: flex-start;
+  margin: 1.5rem 0;
+}
+
+.register-checkbox {
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--primary);
+}
+
+.register-terms-label {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  line-height: 1.4;
+}
+
+.register-link {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.register-link:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+/* Botón de registro */
+.register-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.register-button:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.register-button:disabled {
+  background-color: var(--medium-gray);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Divisor */
+.register-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+}
+
+.register-divider::before,
+.register-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.register-divider::before {
+  margin-right: 1rem;
+}
+
+.register-divider::after {
+  margin-left: 1rem;
+}
+
+/* Botones sociales */
+.register-social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.register-social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--medium-gray);
+  background-color: white;
+  color: var(--text-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.register-social-button:hover {
+  background-color: var(--light-gray);
+  border-color: var(--dark-gray);
+}
+
+.register-social-button img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Pie de formulario */
+.register-footer {
+  text-align: center;
+  color: var(--dark-gray);
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+/* Responsive para Tablet */
+@media (max-width: 768px) {
+  .register-card {
+    padding: 1.5rem;
+  }
+  
+  .register-title {
+    font-size: 1.5rem;
+  }
+  
+  .register-name-fields {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .register-name-fields .register-form-group {
+    min-width: 100%;
+  }
+}
+
+/* Responsive para Móvil */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 1.25rem;
+    margin: 0.5rem;
+    box-shadow: none;
+    border: 1px solid var(--medium-gray);
+  }
+  
+  .register-title {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .register-terms {
+    align-items: flex-start;
+  }
+  
+  .register-terms-label {
+    font-size: 0.85rem;
+  }
+  
+  .register-social-button {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+  
+  .register-footer {
+    font-size: 0.9rem;
+  }
+}

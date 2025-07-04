@@ -1,0 +1,222 @@
+/* Variables de color */
+:root {
+  --primary: #003580;
+  --primary-light: #0071c2;
+  --secondary: #ff5722;
+  --success: #48bb78;
+  --success-dark: #38a169;
+  --danger: #f56565;
+  --danger-dark: #c53030;
+  --warning: #f6ad55;
+  --dark: #2d3436;
+  --light: #f5f6fa;
+  --gray: #dfe6e9;
+}
+
+/* Contenedor general */
+.mybookings-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+}
+
+/* Título */
+.mybookings-container h2 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Mensajes */
+.mybookings-message {
+  background-color: #ffe6e6;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mybookings-no-reservations {
+  font-size: 1.1rem;
+  color: var(--dark);
+  font-weight: 500;
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Lista de reservas */
+.mybookings-reservation-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Tarjeta de reserva */
+.mybookings-reservation-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.mybookings-reservation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.mybookings-reservation-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gray);
+}
+
+.mybookings-reservation-card p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--dark);
+  display: flex;
+  justify-content: space-between;
+}
+
+.mybookings-reservation-card strong {
+  color: var(--primary);
+  margin-right: 0.5rem;
+}
+
+/* Estado de la reserva */
+.mybookings-status-message {
+  font-size: 0.9rem;
+  color: var(--dark);
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: var(--light);
+  border-radius: 4px;
+}
+
+/* Botones */
+.mybookings-reservation-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mybookings-confirm-btn,
+.mybookings-reject-btn,
+.mybookings-modify-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.mybookings-confirm-btn {
+  background: var(--success);
+  color: white;
+}
+
+.mybookings-confirm-btn:hover {
+  background: var(--success-dark);
+}
+
+.mybookings-reject-btn {
+  background: var(--danger);
+  color: white;
+}
+
+.mybookings-reject-btn:hover {
+  background: var(--danger-dark);
+}
+
+.mybookings-modify-btn {
+  background: var(--primary-light);
+  color: white;
+}
+
+.mybookings-modify-btn:hover {
+  background: var(--primary);
+}
+
+/* Responsive para Tablet */
+@media (max-width: 768px) {
+  .mybookings-container {
+    padding: 1rem;
+  }
+  
+  .mybookings-reservation-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Responsive para Móvil */
+@media (max-width: 480px) {
+  .mybookings-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .mybookings-reservation-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .mybookings-reservation-card {
+    padding: 1.2rem;
+  }
+  
+  .mybookings-reservation-card p {
+    flex-direction: column;
+  }
+  
+  .mybookings-reservation-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .mybookings-confirm-btn,
+  .mybookings-reject-btn,
+  .mybookings-modify-btn {
+    width: 100%;
+  }
+}
+
+/* Loading state */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-message {
+  margin-top: 1rem;
+  color: var(--primary);
+  font-weight: 500;
+}

@@ -1,0 +1,15 @@
+    Métodos de cadenas
+        Estos son algunos de los métodos de cadena más comunes. Un método es como una función, pero se ejecuta 
+        “en” un objeto. Si la variable s es una cadena, el código s.lower() ejecuta el método lower() en ese objeto
+        de la cadena y muestra el resultado (esta idea de un método que se ejecuta en un objeto es una de las 
+        ideas básicas que conforman la programación orientada a objetos, OOP). Estos son algunos de los métodos 
+        de cadena más comunes:
+
+        s.lower(), s.upper(): muestra la versión de la cadena en minúsculas o mayúsculas.
+        s.strip(): muestra una cadena sin espacios en blanco del principio y del final.
+        s.isalpha()/s.isdigit()/s.isspace()... -- comprueba si todos los caracteres de la cadena están en las distintas clases de caracteres.
+        s.startswith('other'), s.endswith('other') -- Comprueba si la cadena comienza o termina con la otra cadena dada.
+        s.find('other'): Busca la otra cadena dada (no una expresión regular) dentro de s y muestra el primer índice donde comienza o -1 si no se encuentra.
+        s.replace('old', 'new'): muestra una cadena donde aparecen todas las apariciones de "old" se reemplazó por 'nuevo'
+        s.split('delim'): Muestra una lista de subcadenas separadas por el delimitador dado. El delimitador no es una expresión regular, es solo texto. 'aaa,bbb,ccc'.split(',') -> ['aaa', 'bbb', 'ccc']. Como un caso especial conveniente, s.split() (sin argumentos) se divide en todos los caracteres de espacios en blanco.
+        s.join(list) -- opuesta a split(), une los elementos en la lista dada usando la cadena como delimitador. p.ej., '---'.join(['aaa', 'bbb', 'ccc']) -> aaa---bbb---ccc

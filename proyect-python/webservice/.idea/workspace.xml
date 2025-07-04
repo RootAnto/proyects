@@ -4,26 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="311b401d-f145-4846-a52d-9187156295c6" name="Changes" comment="updates" />
+    <list default="true" id="17d0d782-5460-4141-bfe6-2c87a1593aae" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/static/file_data_base/clase-8cdd6-firebase-adminsdk-8xoiy-5b4e8bd953.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webservice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/firebase_repository_connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository/firebase_repository_connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/file_data_base/clase-8cdd6-firebase-adminsdk-8xoiy-90f1d0006f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/templates/card/template-cards-read.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/templates/card/template-cards-read.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2l0bfRJG4ouGJfJ9GqwPku98f8v" />
+  <component name="ProjectId" id="2p6oc0mLShA3OhbqoleyDh2aaBp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,7 +37,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Antonio/Desktop/Dam/Repository/proyects/proyect-python/webservice/static/css/figures&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Antonio/Desktop/DAM/Repository/proyects/proyect-python/webservice/static/file_data_base&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -45,14 +48,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Antonio\Desktop\Dam\Repository\proyects\proyect-python\webservice\static\css\figures" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Antonio\Desktop\Dam\Repository\proyects\proyect-python\webservice\static\file_data_base" />
-      <recent name="C:\Users\Antonio\Desktop\Dam\Repository\proyects\proyect-python\webservice\static\images\images_main_menu" />
-      <recent name="C:\Users\Antonio\Desktop\Dam\Repository\proyects\proyect-python\webservice\static\images\images_login" />
-      <recent name="C:\Users\Antonio\Desktop\Dam\Repository\proyects\proyect-python\webservice\static\images\images_figures" />
-      <recent name="C:\Users\Antonio\Desktop\Dam\Repository\proyects\proyect-python\webservice\static\css\figures" />
+      <recent name="C:\Users\Antonio\Desktop\DAM\Repository\proyects\proyect-python\webservice\static\file_data_base" />
     </key>
   </component>
   <component name="RunManager">
@@ -95,34 +91,22 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="311b401d-f145-4846-a52d-9187156295c6" name="Changes" comment="" />
-      <created>1724320044262</created>
+      <changelist id="17d0d782-5460-4141-bfe6-2c87a1593aae" name="Changes" comment="" />
+      <created>1732095964862</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1724320044262</updated>
-      <workItem from="1724320045560" duration="13728000" />
-      <workItem from="1724334004148" duration="4450000" />
-      <workItem from="1724368449789" duration="22000" />
+      <updated>1732095964862</updated>
+      <workItem from="1732095967549" duration="2094000" />
+      <workItem from="1732098077554" duration="1158000" />
+      <workItem from="1732475333845" duration="32000" />
+      <workItem from="1732478506196" duration="18000" />
     </task>
-    <task id="LOCAL-00001" summary="updates">
-      <option name="closed" value="true" />
-      <created>1724338443183</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1724338443183</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="updates" />
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/webservice$Main.coverage" NAME="Main Coverage Results" MODIFIED="1724338305118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/webservice$Main.coverage" NAME="Main Coverage Results" MODIFIED="1732098086651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -37,6 +37,7 @@
                                 <th>Price</th>
                             </tr>
                         </thead>
+                        <tbody>
                             {% for card in cards %}
                             <tr>
                                 <td>{{ card.name }}</td>
@@ -46,7 +47,6 @@
                                 <td>{{ card.price }}</td>
                             </tr>
                             {% endfor %}
-                        <tbody>
                         </tbody>
                     </table>
                 </div>

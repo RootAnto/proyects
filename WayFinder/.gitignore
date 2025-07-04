@@ -1,0 +1,39 @@
+# ========================
+# Python
+# ========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# SQLite / DB
+*.db
+*.sqlite3
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+*.env
+
+# Archivos sensibles
+serviceAccountKey.json
+
+# ========================
+# Node.js
+# ========================
+node_modules/
+package-lock.json
+
+# ========================
+# Logs
+# ========================
+*.log
+logs/
+
+# ========================
+# Otros
+# ========================
+.DS_Store
+logs/firebase.log
